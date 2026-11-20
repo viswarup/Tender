@@ -1,0 +1,1138 @@
+=== PQC1.PDF TEXT (Total Pages: 22) ===
+
+
+--- PAGE 1 ---
+Commercial Evaluation
+1 Date 23/01/2026
+2 Subject Commercial Evaluation
+3 Tender No. 9400M25A37
+4 Department Materials
+5 Plant 9400
+6 Committee minutes-1 for evaluation of PQC against Tender Ref. No. 9400M25A37
+9400M25A37
+Subject: Committee minutes-1 for evaluation of PQC against Tender Ref. No. 9400M25A37
+Procurement of Three-year rate contract of 8 nos. of A3 mono MFP cartridges, 94 nos. of A4 mono 
+MFP cartridges, and 21 sets of A3 Colour MFP cartridges.
+Pre-Qualification Criteria evaluation:
+A)Financial PQC: Not Applicable
+B) Commercial Experience Criteria:
+ For experience, the order(s) executed by the bidder, during the last 5 years ending on the last day of the 
+month immediately preceding the month in which the last date of bid submission falls, should be 
+considered as under:
+ Three orders each executed for "Supply of toners or cartridges"   where executed value 
+is                   not              less than the amount equal to Rs. 1,82,000.00
+ OR
+Two orders each executed for "Supply of toners or cartridges" where executed value is 
+not                                            less than the amount equal to Rs. 2,43,000.00
+ OR
+Page 1 of 22
+--- PAGE 2 ---
+1 M/s Alankar Distributors
+1. a Financial PQC: Not Applicable
+Commercial Experience Criteria
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+Copy of PO No. GEMC-
+511687706010310 issued by 
+Controller General of Defence 
+Accounts.
+27.03.2023 INR 
+53,84,223 Yes
+Execution 
+Proof Not 
+submitted 
+ One order executed for "Supply of toners or cartridges" where executed value is 
+not                                               less than the amount equal to Rs. 3,03,000.00
+ 
+ The last date of order execution shall fall in the above-mentioned period.
+ FOR Destination price (Total landed cost i.e., All inclusive of P&F, Freight, TPI, Taxes and duties etc.) 
+shall be considered for arriving at executed order value.
+ Foreign orders in currency other than INR shall be converted to INR on the date of the said Purchase 
+Order.
+ 
+ For fulfilling the commercial experience criteria any one of the 
+following                                                                   documents may be considered as valid proof for 
+meeting the criteria:
+ i. Purchase Order along with Invoice(s) {with self-certification that supplies against invoice has been 
+successfully executed}. Uploading the invoice(s) on the e-portal is considered as self-certification by the 
+bidder that supplies against the invoices have been successfully executed to the required value.
+ ii. Purchase Order along with Bank Certificate indicating payment against the PO
+ iii. Purchase Order along with Execution certificate by client indicating executed order value. In case the 
+execution certificate does not mention the executed value, the bidder shall have to submit other 
+documents as mentioned here indicating executed value.
+ iv. In case bidder cites any reference of job executed for IOCL and bidder has not / is not able to furnish 
+documentary evidence, the internal records of IOCL shall be considered against proof of fulfilment of 
+commercial or technical experience criteria. LR date / RC (101/103 movement type in SAP) date (if LR 
+date is not available in SAP) shall be deemed as date of execution.
+ v. In case multiple orders have been placed against a single rate contract and the cumulative order value 
+satisfies the PQC, it may also be considered, subject to submission of other documents as mentioned 
+above. Multiple GeM contracts against one GeM bid on a particular vendor is to be considered as a single 
+PO for PQC evaluation.
+ 
+ 
+Page 2 of 22
+--- PAGE 3 ---
+1. b
+2
+Copy of PO No. GEMC-
+511687732777771 issued by 
+Ministry of Civil Aviation.
+10.10.2023 INR 
+43,26,954.00
+Yes
+Execution 
+Proof Not 
+submitted
+3
+Copy of PO No. GEMC-
+511687771151409 issued by Indo 
+Tibetan Border Police (ITBP).
+28.06.2023 INR 
+26,84,305.00 Yes
+Execution 
+Proof Not 
+submitted
+4
+Copy of PO No. GEMC-
+511687731854057 issued by 
+Office of DG (MED & COS).
+28.11.2024 INR 
+19,79,332.00
+All 
+items
+except 
+Line no.
+8
+Execution 
+Proof Not 
+submitted
+5
+Copy of PO No. GEMC-
+511687778717530 issued by 
+Controller General of Defence 
+Account.
+08.04.2025 INR 
+4,83,320.00 Yes
+Execution 
+Proof Not 
+submitted
+6
+Copy of PO No. GEMC-
+511687732609862 issued by 
+Election Commission of India.
+23.12.2022 INR 
+45,48,153.00 Yes
+Execution 
+Proof Not 
+submitted
+Query
+Recommendations:   Bidder to submit corresponding execution documents as proof against the 
+Copy of POs submitted for Commercial experience Criteria as per Clause 9.2 of Tender 
+Document.
+Require valid proof for meeting the criteria:
+ i. Purchase Order along with Invoice(s) with self-certification that supplies against invoice has 
+been successfully executed. Uploading the invoice(s) on the e-portal is considered as self-
+certification by the bidder that supplies against the invoices have been successfully executed to 
+the required value.
+ ii. Purchase Order along with Bank Certificate indicating payment against the PO
+ iii. Purchase Order along with Execution certificate by client indicating executed order value. 
+In case the execution certificate does not mention the executed value, the bidder shall have to 
+submit other documents as mentioned here indicating executed value.
+   
+2 M/s Arms Peripherals.
+2. a Financial PQC: Not Applicable
+Commercial Experience Criteria
+Page 3 of 22
+--- PAGE 4 ---
+2. b
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No.  GEMC-
+511687712377171 issued 
+by IOCL- Panipat Refinery 
+along with GeM invoice no. 
+GEM-51206197 dtd 
+11.12.2024 & GEM-
+51205804 dtd 11.12.2024 
+(ARMS24250920 dt. 09-
+Dec-2024 ARMS24250921 
+dt. 09.12.2024)
+26.11.2024 INR  36,33,750.00 Yes CRAC 
+submitted
+Status: Recommendations:   Acceptable against single order value criteria based on PO mentioned at S.
+no 1
+   
+   
+3 M/s Digital Automation
+3. a Financial PQC: Not Applicable
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC-
+511687724500852 issued 
+by Central Board of Direct Taxes 
+(CBDT)
+20.02.2025 INR 
+2,06,599.00 No 
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+ PO No.  GEMC- PO not 
+meeting 
+Similar 
+Page 4 of 22
+--- PAGE 5 ---
+4 M/s DUBARIA COMPUTERS PRIVATE LIMITED
+4. a Financial PQC: Not Applicable
+4.b
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC- 511687772180351 
+issued by Central Secretariat – New 
+Delhi
+06.04.2018 INR 
+25,000.00 Yes  Rejected
+2  PO No. GEMC- 511687778320670 
+issued by Indian Army. 21.08.2023 INR 
+3,920.00 Yes  Rejected
+3.b 2
+511687712736370 issued 
+by Central Board of excise and 
+Custom (CBEC)
+06.01.2025
+INR 
+4,98,500.00
+No  Item 
+Criteria
+3  PO No. GEMC-511687789121922 
+issued by Northwestern Railway 06.09.2022 INR 
+413850.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+4  PO No. GEMC-511687792188061 
+issued by Bank of Maharashtra 21.12.2023 INR 
+201776.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+Status:
+ 
+Recommendations:  Rejected – None of the POs are meeting similar item definition
+ 
+Page 5 of 22
+--- PAGE 6 ---
+5 M/s Fountain Stationers
+5. a Financial PQC: Not Applicable
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC- 
+511687763961526 issued 
+by Hindustan Aeronautics 
+Limited (HAL) along with GeM 
+invoice No. GEM-17333307 dtd 
+15.01.2022
+03.09.2021 INR 
+11,51,696.00 Yes 
+Execution 
+Proof Not 
+Submitted 
+for 1 Yr 
+ARC
+2
+ PO No. GEMC-
+511687731481230 issued 
+by Hindustan Aeronautics 
+Limited (HAL) along with GeM 
+Invoice No. GEM-14521298 dtd 
+17.08.2021 & GEM-16027319 
+dtd 12.11.2021
+05.08.2021 INR 
+4,74,750.00 Yes  CRAC 
+submitted
+3
+ PO No. GEMC-
+511687799306662 issued 
+by Central Government Health 
+Scheme (CGHS) along with GeM 
+invoice No.  GEM-14380398 dtd 
+09.08.2021 & GEM-16027319 
+dtd 12.11.2021
+03.08.2021 INR 399,900 Yes  CRAC 
+submitted
+4
+ PO No. GEMC-
+511687723477572 issued 
+by Indian Army along with GeM 
+invoice No.  GEM-14245363 dtd 
+02.08.2021
+29.07.2021 INR 319,200 Yes  CRAC 
+submitted
+ PO No. GEMC-
+511687728937873 issued 
+All 
+items
+Status:
+ 
+Recommendations:  Rejected – As the PO value meeting similar item definition are not 
+meeting minimum PQC requirement
+ 
+Page 6 of 22
+--- PAGE 7 ---
+5.b
+5 by Border Road Organisation 
+along with GeM invoice 
+No.  GEM-14111600 dtd 
+24.07.2021
+20.07.2021 INR 
+1,74,855.00 except 
+Line no. 
+9,15
+CRAC 
+submitted
+6
+ PO No. GEMC-
+511687792304088 issued 
+by Home Department 
+Maharashtra along with GeM 
+invoice No.  GEM-21779731 dtd 
+02.08.2022
+26.07.2022 INR 
+9,85,000.00
+Line no. 
+1,4
+CRAC 
+submitted
+7
+ PO No. GEMC-
+511687783067914 issued 
+by Home Department 
+Maharashtra along with GeM 
+invoice No.  GEM-21779048 dtd 
+02.08.2022
+26.07.2022 INR 
+7,35,900.00
+Line no. 
+1,3
+CRAC 
+submitted
+8
+ PO No. GEMC-
+511687735952320 issued 
+by Employees State Insurance 
+Corporation (ESIC) along with 
+GeM invoice No.  GEM-
+21930205 dtd 06.08.2022
+28.07.2022 INR 
+4,26,400.00 Yes  CRAC 
+submitted
+9
+ PO No. GEMC-
+511687728518830 issued 
+by Indian Navy along with GeM 
+invoice No.  GEM-22619468 dtd 
+02.09.2022
+30.08.2022 INR 
+6,12,530.00 Yes  CRAC 
+submitted
+10
+ PO No. GEMC-
+511687748374694 issued 
+by Border Road 
+Organisation along with GeM 
+invoice No.  GEM-23470112 dtd 
+30.09.2022
+26.09.2022 INR 
+3,43,320.00 Yes  CRAC 
+submitted
+11
+ PO No. GEMC-
+511687736292682 issued by Indo 
+Tibetan Border Police 
+(ITBP) along with GeM invoice 
+No.  GEM-23712626 dtd 
+10.10.2022
+08.10.2022 INR 
+4,43,960.00 Yes  CRAC 
+submitted
+ PO No. GEMC-
+511687771175360 issued by Indo 
+Tibetan Border Police 
+Page 7 of 22
+--- PAGE 8 ---
+6 M/s Heamons Systems
+6. a Financial PQC: Not Applicable
+6.b
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC-
+511687703758674 issued 
+by Northern Railway along with 
+GeM Invoice No: GEM-
+41390754 dtd 12.03.2024 & self-
+certification
+01.03.2024 INR 
+8,14,515.00 Yes  CRAC 
+submitted
+2
+ PO No. GEMC- 
+511687756260137 issued 
+by Delhi Transport Corporation 
+(DTC) along with GeM Invoice 
+No: GEM-20244809 dtd 
+23.05.2022
+05.05.2022 INR 
+12,32,880.00 Yes  CRAC 
+submitted
+3
+ PO No. GEMC-
+511687778503573 issued 
+by Rajya Sabha Secretariat along 06.06.2023 Yes 
+12 (ITBP) along with GeM invoice 
+No.  GEM-23692094 dtd 
+10.10.2022
+08.10.2022
+INR 
+6,40,800.00
+Yes 
+CRAC 
+submitted
+13
+ PO No. GEMC-
+511687707884669 issued 
+by National Board of 
+Examinations along with GeM 
+invoice No.  GEM-24192659 dtd 
+31.10.2022
+21.10.2022 INR 
+3,31,050.00 Yes  CRAC 
+submitted
+Status:
+ 
+Recommendations:  Acceptable against single order value criteria based on PO mentioned 
+at      S.no 2
+ 
+Page 8 of 22
+--- PAGE 9 ---
+7 M/s iCare It Solutions
+7. a Financial PQC: Not Applicable
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC-511687720693624 
+issued by Central Reserve Police 
+Force (CRPF)  
+05.02.2021 INR 809,250.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+with GeM Invoice No: GEM-
+31365030 dtd 08.06.2023 INR 
+3,55,320.00
+CRAC 
+submitted
+4
+ PO No. GEMC-
+511687764879791 issued by All 
+India Institute of Medical 
+Sciences (AIIMS) along with 
+GeM Invoice No: GEM-
+56547571 dtd 17.03.2025 & self-
+certification
+12.03.2025 INR 
+4,15,550.00 Yes  CRAC 
+submitted
+5
+ PO No. GEMC-
+511687713558176 issued by All 
+India Institute of Medical 
+Sciences (AIIMS) along with 
+GeM Invoice No: GEM-
+54791487 dtd 18.02.2025 & self-
+certification
+13.02.2025 INR 
+3,98,600.00 Yes  CRAC 
+submitted
+Status:
+ 
+Recommendations:  Acceptable against single order value criteria based on PO mentioned at S.
+no1
+ 
+Page 9 of 22
+--- PAGE 10 ---
+7.b
+2  PO No. GEMC-
+511687779382340 issued by Central 
+Bank of India
+05.06.2023 INR  4,77,000.00 No PO not 
+meeting 
+Similar 
+Item 
+Criteria
+3
+ PO No. GEMC-
+511687729746480 issued by Indian 
+Navy
+07.09.2023 INR  35,19,700.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+4
+ PO No. GEMC-
+511687792227429 issued by Higher 
+Education Department Uttar Pradesh
+23.01.2023 INR  3,60,500.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+5
+ PO No. GEMC-
+511687726528253 issued by C&IS 
+Directorate
+27.10.2022 INR 408,000.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+6
+ PO No. GEMC-
+511687724686515 issued by Bridge 
+and Roof Company (India) Limited
+11.10.2023 INR  2,07,300.00
+All 
+items
+except 
+Line no.
+1,3,4,6,7
+Rejected as 
+PO Value 
+not 
+meeting 
+PQC
+7
+PO 
+No. GEMC- 511687778903924 issued 
+by Department of Defence Research 
+& Development
+03.10.2025 INR  1,12,400 Yes
+Rejected as 
+PO Value 
+not 
+meeting 
+PQC
+Status:
+ 
+Recommendations: Rejected – As the PO value meeting similar item definition are not meeting 
+minimum PQC requirement 
+ 
+ 
+Page 10 of 22
+--- PAGE 11 ---
+8 M/s IT Cartridge
+8. a Financial PQC: Not Applicable
+8.b
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC-
+511687784399930 issued 
+by Central Board of Direct 
+Taxes (CBDT) 
+15.03.2021 INR  3,23,000.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+2
+ PO No. GEMC-
+511687759444271 issued 
+by Indian Army along with 
+GeM invoice No. GEM-
+24651413 dtd 18.11.2022. 
+12.11.2022 INR 261,846.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+3
+ PO No. GEMC-
+511687714896048 issued 
+by Central Board of Direct 
+Taxes (CBDT)
+15.03.2021 INR  3,23,000.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+4
+ PO No. GEMC-
+511687772212893 issued 
+by Indian Navy along with 
+GeM Invoice No: GEM-
+19303848 dtd 23.03.2021
+08.03.2021 INR 288,000.00 No
+PO not 
+meeting 
+Similar 
+Item 
+Criteria
+Status:
+ 
+Recommendations:  Rejected – None of the POs are meeting similar item definition
+ 
+ 
+ 
+Page 11 of 22
+--- PAGE 12 ---
+10 M/s Luxmi Enterprises
+10. a Financial PQC: Not Applicable
+Commercial Experience Criteria: - 
+9 M/s Kepel Infotech
+9. a Financial PQC: Not Applicable
+9.b
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ CRAC No: GEMCRAC-1-
+511687789405452-1 issued 
+by Indian Coast Guard
+29.09.2023 INR  22,750.00 Yes  Rejected
+2
+ CRAC No: GEMCRAC-1-
+511687731161525-1 issued 
+by Indian Air Force
+27.02.2023 INR  24,570.0 Yes  Rejected
+3
+ CRAC No: GEMCRAC-1-
+511687749170846-1 issued 
+by Sardar Vallabhbhai Patel 
+National Police Academy
+03.03.2022 INR  1,68,315.00 Yes  Rejected
+4
+ PO No. GEMC-
+511687704753656 issued 
+by Central Board of Excise 
+and Customs (CBEC)
+04.07.2018 INR 11,020.00 Yes  Rejected
+Status:
+ 
+Recommendations:  Rejected – As the PO value meeting similar item definition are not 
+meeting minimum PQC requirement
+ 
+ 
+Page 12 of 22
+--- PAGE 13 ---
+10.b
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No.  GEMC-
+511687797893122 issued 
+by   Society for Promotion 
+of IT in Chandigarh (SPIC) 
+along with GeM Invoice 
+No: GEM-59614602 dtd 
+09.06.2025
+04.06.2025 INR   8,42,200.00 Yes CRAC 
+submitted
+2
+ PO No.  GEMC-
+511687773947804
+issued by   Border Road 
+Organisation along with 
+GeM Invoice No: GEM-
+57696761 dtd 31.03.2025
+28.03.2025 INR   3,11,400.00 Yes CRAC 
+submitted
+3
+ PO No.  GEMC-
+511687735789191
+issued by Council of 
+Scientific and Industrial 
+Research (CSIR) along with 
+GeM Invoice No: GEM-
+39491184 dtd 03.02.2024
+30.01.2024 INR   4,82,400.00 Yes CRAC 
+submitted
+4
+ PO No.  GEMC-
+511687718050783
+issued by Indian Army 
+along with GeM Invoice 
+No: GEM-14278052 dtd 
+03.08.2021
+29.07.2021 INR   1,93,100.00 Yes CRAC 
+submitted
+5
+ PO No.  GEMC-
+511687754844117
+issued by IOCL- Panipat 
+Refinery along with GeM 
+Invoice No: GEM-9339653, 
+GEM-9339363 dtd 
+14.10.2020
+06.10.2020 INR   9,18,575.00 Yes CRAC 
+submitted
+ PO No.  GEMC-
+511687757736947
+Page 13 of 22
+--- PAGE 14 ---
+11 M/s Mahadev Stationery & Xerox
+11. a Financial PQC: Not Applicable
+11.b
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc 
+Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1  GeM Invoice No: GEM-
+51902666. Dtd 24.12.2025 - INR 
+342645.00 No PO not meeting 
+Similar Item Criteria
+6 issued by Airports 
+Authority of India along 
+with GeM Invoice No: 
+GEM-31456207 dtd 
+12.06.2023
+08.06.2023 INR   3,02,640.00 Yes CRAC 
+submitted
+7
+ PO No.  GEMC-
+511687794687805
+issued by Society for 
+Promotion of IT in 
+Chandigarh (SPIC) along 
+with GeM Invoice No: 
+GEM-31602454 dtd 
+16.06.2023 & GEM-
+31602270
+14.06.2023 INR   10,65,150.00Yes CRAC 
+submitted
+8
+ PO No.  GEMC-
+511687722195741
+issued by IOCL- Panipat 
+Refinery along with GeM 
+Invoice No: GEM-
+13721117 dtd 29.06.2021
+22.06.2021 INR   4,23,360.00 Yes CRAC 
+submitted
+Status:
+ 
+Recommendations: Acceptable against single order value criteria based on PO mentioned at S.
+no1
+ 
+ 
+Page 14 of 22
+--- PAGE 15 ---
+12 M/s Mayur Computers
+12. a Financial PQC: Not Applicable
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value Meeting 
+similar item
+Committee 
+Observation
+1
+ PO No. GEMC-
+511687700186994 
+issued by Indian Army 
+along with GeM 
+Invoice No: GEM-
+38298030 dtd 
+04.01.2024
+28.12.2023 INR  1,60,947.00
+All items
+except Line 
+no.
+18,
+19,23,24,25,26
+Execution 
+Proof Not 
+submitted
+2
+ PO No. GEMC- 
+511687708237307 
+issued by Indian Army 
+along with GeM 
+Invoice No:       GEM-
+38796092 dtd 
+17.01.2024
+15.01.2024 INR  2,32,478.00 Yes
+Execution 
+Proof Not 
+submitted
+3
+ PO No. GEMC-
+511687756324449 
+issued by NTPC SAIL 
+Power Company Ltd 
+along with GeM 
+Invoice No:   GEM-
+37749772 dtd 
+20.12.2023
+09.12.2023 INR  2,94,826.00 Yes
+Execution 
+Proof Not 
+submitted
+Status:
+ 
+Recommendations:  Rejected – None of the POs are meeting similar item definition
+ 
+Page 15 of 22
+--- PAGE 16 ---
+12.b
+4
+ PO No. GEMC- 
+511687752477893 
+issued by  LIC - Life 
+Insurance Corporation 
+of India along with 
+GeM Invoice 
+No:    GEM-35550558 
+dtd 14.10.2023
+10.10.2023 INR 65,355.00
+Line no. 
+4,5,6,7
+Execution 
+Proof Not 
+submitted
+5
+ PO No.  GEMC- 
+511687754561252 
+issued by   Andaman & 
+Nicobar Command 
+along with GeM 
+Invoice No:     GEM-
+22914389 dtd 
+13.09.2022
+07.09.2022 INR   1,89,359.00
+Yes Execution 
+Proof Not 
+submitted
+6
+ PO No.  GEMC- 
+511687751040140 
+issued by   Indian 
+Army  GeM Invoice 
+No:      GEM-
+17083539 , GEM-
+17444186,  dtd 
+04.01.2022  GEM-
+17456042 , GEM-
+17456212, GEM-
+17458061 dtd 
+21.01.2022 ,  GEM-
+18219696 dtd 
+19.02.2022 , GEM-
+18220323 dtd 
+19.02.2022 , GEM-
+18220763 , GEM-
+18221149 , GEM-
+18221394, GEM-
+18222265, GEM-
+18222684, GEM-
+18223919 ,  GEM-
+18224179 dtd 
+19.02.2022 etc
+30.12.2021 INR   2,11,365.00
+Yes
+Execution 
+Proof Not 
+submitted
+Recommendations:   Bidder to submit corresponding execution documents as proof against the 
+Copy of POs submitted for Commercial experience Criteria as per Clause 9.2 of Tender 
+Document.
+Require valid proof for meeting the criteria:
+ i. Purchase Order along with Invoice(s) with self-certification that supplies against invoice has 
+Page 16 of 22
+--- PAGE 17 ---
+14 M/s Royal Print Technology
+14. a Financial PQC: Not Applicable
+Commercial Experience Criteria: -  
+13 M/s Ravechi Cartridge
+13. a Financial PQC: Not Applicable
+13.b
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC-
+511687709668754 issued 
+by Container Corporation of 
+India Limited
+12.08.2024 INR  45,000.00 Yes  Rejected
+2
+ PO No. GEMC-
+511687749581305 issued 
+by Intelligence Bureau
+11.10.2023 INR  51,750.00 Yes  Rejected
+Status:
+ 
+Recommendations:  Rejected – As the PO value meeting similar item definition are not 
+meeting minimum PQC requirement
+Query  been successfully executed. Uploading the invoice(s) on the e-portal is considered as self-
+certification by the bidder that supplies against the invoices have been successfully executed to 
+the required value.
+ ii. Purchase Order along with Bank Certificate indicating payment against the PO
+ iii. Purchase Order along with Execution certificate by client indicating executed order value. 
+In case the execution certificate does not mention the executed value, the bidder shall have to 
+submit other documents as mentioned here indicating executed value.
+ 
+ 
+Page 17 of 22
+--- PAGE 18 ---
+15 M/s Softek Office Products Private Limited
+15. a Financial PQC: Not Applicable
+Commercial Experience Criteria: - 
+Sno Doc Submitted Doc Date PO Value
+Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC- 
+511687700432340 issued 
+by All India Institute of 
+Medical Sciences along 
+with Tax Invoice no. TX
+/2202/23-24 dtd 23.02.2024
+22.02.2024 INR   6,03,600 Yes CRAC 
+Submitted
+ PO No. GEMC-
+511687783646895
+14.b
+Sno Doc Submitted Doc Date PO Value Meeting 
+similar 
+item
+Committee 
+Observation
+1
+ PO No. GEMC-
+511687706287042 issued 
+by Bharat Petroleum 
+Corporation Ltd 
+19.12.2024 INR  23,03,159.00 Yes 
+Execution 
+Proof Not 
+submitted
+Query 
+Recommendations:   Bidder to submit corresponding execution documents as proof against the 
+Copy of POs submitted for Commercial experience Criteria as per Clause 9.2 of Tender 
+Document.
+Require valid proof for meeting the criteria:
+ i. Purchase Order along with Invoice(s) with self-certification that supplies against invoice has 
+been successfully executed. Uploading the invoice(s) on the e-portal is considered as self-
+certification by the bidder that supplies against the invoices have been successfully executed to 
+the required value.
+ ii. Purchase Order along with Bank Certificate indicating payment against the PO
+ iii. Purchase Order along with Execution certificate by client indicating executed order value. 
+In case the execution certificate does not mention the executed value, the bidder shall have to 
+submit other documents as mentioned here indicating executed value.
+ 
+Page 18 of 22
+--- PAGE 19 ---
+15.b
+2 issued by All India Institute 
+of Medical Sciences along 
+with Tax Invoice no. TX
+/2794/22-23 dtd 28.03.2023
+27.03.2023 INR   4,74,500.00 Yes CRAC 
+Submitted
+3
+ PO No. GEMC-
+511687731553162
+issued by Delhi Metro Rail 
+Corporation Ltd along with 
+Tax Invoice no. TX/90/24-
+25 dtd 15.04.2024
+21.03.2024 INR   3,72,000.00 Yes
+CRAC 
+Submitted 
+for 
+3,00,000/- 
+executed 
+Value
+4
+ PO No. GEMC-
+511687756673668
+issued by National 
+Fertilizers Limited along 
+with Tax Invoice no. TX
+/1824/24-25 dtd 18.12.2024
+18.12.2024 INR   4,05,000.00 Yes CRAC 
+Submitted
+5
+ PO No. GEMC-
+511687753766910
+issued by India Air 
+Force   along with Tax 
+Invoice no. TX/100/25-26 
+dtd 15.04.2025
+26.03.2024 INR   9,52,500.00 Yes CRAC 
+Submitted
+6
+ PO No. GEMC-
+511687756602495
+issued by All India Institute 
+of Medical Sciences along 
+with Tax Invoice no. TX
+/1285/25-26 dtd 26.09.2025
+23.09.2025 INR   12,20,000.00Yes
+CRAC 
+Submitted 
+for 
+6,10,000 
+executed 
+value
+7
+ PO No. GEMC-
+511687755356602
+issued by All India Institute 
+of Medical Sciences along 
+with Tax Invoice no. TX
+/1351/25-26 dtd 03.10.2025
+29.09.2025 INR   8,43,480.00 Yes CRAC 
+Submitted
+Status:
+Page 19 of 22
+--- PAGE 20 ---
+ 
+Recommendations:  Acceptable against single order value criteria based on PO mentioned at S.
+no1
+ 
+7 DOA/DOP/Manual Clause 
+Reference IMMM 3.3.7
+8
+DOA/DOP/Manual 
+Approving Authority 
+Reference
+HOD of Materials Dept.
+Submitted for approval
+Page 20 of 22
+--- PAGE 21 ---
+ 
+ 
+ 
+Comments Added By : Kasarla Adithya, Manager (Information System), (00511176) at Fri Jan
+23 2026 13:01:05 IST;  
+Simmi Dhiman, Finance Manager, (00084574) at Fri Jan 23 2026 13:01:05 IST;  
+Potana Bhanu Siddarth, Manager, (00509299) at Fri Jan 23 2026 13:01:05 IST;  
+ 
+ Action :- Initiated By
+ 
+ Remarks :- Approval Initiated
+ 
+ 
+Comments Added By : Vikas Jee Gautam, Sr. Finance Manager, (00081747) at Tue Jan 27 2026
+11:54:51 IST;  
+ 
+ Action :- Seek Clarification
+ 
+ Remarks :- The case has been Assigned for Seek Clarification to 00509299
+--Kindly provide GeM NIT document
+ 
+ 
+Comments Added By : Potana Bhanu Siddarth, Manager, (00509299) at Wed Jan 28 2026
+14:26:20 IST;  
+ 
+ Action :- Reply
+ 
+ Remarks :- The case has been Assigned After Reply to 00081747
+Attached as per Remark
+ 
+ 
+Comments Added By : Vikas Jee Gautam, Sr. Finance Manager, (00081747) at Fri Jan 30 2026
+10:42:23 IST;  
+ 
+ Action :- Concurred
+ 
+ Remarks :- concurred
+ 
+ 
+Comments Added By : S K Roy, Dy. General Manager(M&C), (00072058) at Fri Jan 30 2026
+Page 21 of 22
+--- PAGE 22 ---
+15:36:52 IST;  
+ 
+ Action :- Approved
+ 
+ Remarks :- Approved
+ 
+ 
+Page 22 of 22

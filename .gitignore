@@ -1,0 +1,34 @@
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+env/
+venv/
+ENV/
+*.egg-info/
+*.egg
+
+# Build artifacts & large zip bundles
+dist/*.zip
+
+# Testing & Cache
+.pytest_cache/
+.coverage
+htmlcov/
+data/temp_ocr_images/
+
+# Backups & Editor artifacts
+*.bak
+*.swp
+*~
+.DS_Store
+.DS_Store?
+._*

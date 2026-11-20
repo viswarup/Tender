@@ -1,0 +1,56 @@
+{
+  "tender_no": "9400M25A37",
+  "bid_no": "GEM/2025/B/6755890",
+  "total_vendors": 5,
+  "accepted": [
+    "ALANKAR DISTRIBUTORS",
+    "ARMS PERIPHERALS",
+    "HEAMONS SYSTEMS",
+    "RAVECHI CARTRIDGE",
+    "LUXMI ENTERPRISES"
+  ],
+  "rejected": [],
+  "queried": [],
+  "results": [
+    {
+      "vendor": "ALANKAR DISTRIBUTORS",
+      "status": "ACCEPTED",
+      "criteria_met": "MSE Exemption (Udyam Registration)",
+      "recommendation": "ALANKAR DISTRIBUTORS is exempted from commercial experience criteria as a MSE Exemption (Udyam Registration).",
+      "po_count": 6,
+      "qualifying_count": 2
+    },
+    {
+      "vendor": "ARMS PERIPHERALS",
+      "status": "ACCEPTED",
+      "criteria_met": "Startup Exemption (DPIIT Recognition)",
+      "recommendation": "ARMS PERIPHERALS is exempted from commercial experience criteria as a Startup Exemption (DPIIT Recognition).",
+      "po_count": 1,
+      "qualifying_count": 0
+    },
+    {
+      "vendor": "HEAMONS SYSTEMS",
+      "status": "ACCEPTED",
+      "criteria_met": "Option C: 1 order(s) \u00d7 \u2265 \u20b9303,000",
+      "recommendation": "HEAMONS SYSTEMS: Meets commercial experience criteria under Option C with 3 qualifying order(s).",
+      "po_count": 8,
+      "qualifying_count": 3
+    },
+    {
+      "vendor": "RAVECHI CARTRIDGE",
+      "status": "ACCEPTED",
+      "criteria_met": "MSE Exemption (Udyam Registration)",
+      "recommendation": "RAVECHI CARTRIDGE is exempted from commercial experience criteria as a MSE Exemption (Udyam Registration).",
+      "po_count": 4,
+      "qualifying_count": 0
+    },
+    {
+      "vendor": "LUXMI ENTERPRISES",
+      "status": "ACCEPTED",
+      "criteria_met": "Option C: 1 order(s) \u00d7 \u2265 \u20b9303,000",
+      "recommendation": "LUXMI ENTERPRISES: Meets commercial experience criteria under Option C with 4 qualifying order(s).",
+      "po_count": 8,
+      "qualifying_count": 5
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tender Evaluation Dashboard</title>
+    <meta name="description" content="AI-powered commercial evaluation system for IOCL tender bids">
+    <link href="fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+    <div class="topbar-brand"><span>TE</span> Tender Eval</div>
+    <div class="topbar-nav">
+        <button class="active" data-view="overview" id="nav-overview">Overview</button>
+        <button data-view="vendors" id="nav-vendors">Vendors</button>
+        <button data-view="evaluation" id="nav-evaluation">Evaluation</button>
+        <button data-view="groundtruth" id="nav-groundtruth">Ground Truth</button>
+    </div>
+    <div class="topbar-status" id="status-bar">Loading...</div>
+</div>
+
+<!-- Main Layout -->
+<div class="app">
+    <div class="main-panel" id="main-panel">
+
+        <!-- Overview View -->
+        <div class="view-section active" id="view-overview">
+            <div class="section-header">Dashboard</div>
+            <h2 id="tender-title">Tender Evaluation</h2>
+
+            <div class="stats-grid" id="stats-grid">
+                <div class="stat-card" style="border-top: 2px solid var(--accent)">
+                    <div class="stat-num" style="color: var(--accent)" id="stat-total">—</div>
+                    <div class="stat-label">Total Bidders</div>
+                </div>
+                <div class="stat-card" style="border-top: 2px solid var(--green)">
+                    <div class="stat-num" style="color: var(--green)" id="stat-accepted">—</div>
+                    <div class="stat-label">Accepted</div>
+                </div>
+                <div class="stat-card" style="border-top: 2px solid var(--red)">
+                    <div class="stat-num" style="color: var(--red)" id="stat-rejected">—</div>
+                    <div class="stat-label">Rejected</div>
+                </div>
+                <div class="stat-card" style="border-top: 2px solid var(--amber)">
+                    <div class="stat-num" style="color: var(--amber)" id="stat-queried">—</div>
+                    <div class="stat-label">Queried</div>
+                </div>
+            </div>
+
+            <!-- Tender Info Card -->
+            <div class="card" id="tender-info-card">
+                <div class="card-header">
+                    <div class="card-title">Tender Information</div>
+                </div>
+                <div id="tender-info-body" style="font-size: 0.88rem;"></div>
+            </div>
+
+            <!-- Quick Vendor Matrix -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Vendor Status Matrix</div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="vendor-table" id="overview-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Vendor</th>
+                                <th>Status</th>
+                                <th>Docs</th>
+                                <th>POs</th>
+                                <th>MAF</th>
+                                <th>Udyam</th>
+                                <th>Criteria</th>
+                            </tr>
+                        </thead>
+                        <tbody id="overview-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vendors View (detail) -->
+        <div class="view-section" id="view-vendors">
+            <div id="vendor-detail-container">
+                <div class="empty-state">
+                    <div class="icon">📦</div>
+                    <h3>Select a vendor</h3>
+                    <p>Click a vendor in the overview table to view details</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evaluation View -->
+        <div class="view-section" id="view-evaluation">
+            <div id="eval-detail-container">
+                <div class="empty-state">
+                    <div class="icon">⚖️</div>
+                    <h3>Select a vendor</h3>
+                    <p>Click a vendor in the overview table to view their PQC evaluation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ground Truth View -->
+        <div class="view-section" id="view-groundtruth">
+            <div id="groundtruth-container">
+                <div class="loading"><div class="spinner"></div> Loading HEAMONS validation...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Chat Panel: disabled until RAG phase -->
+    <div class="chat-panel collapsed" id="chat-panel">
+        <div class="chat-header">
+            <span>💬</span>
+            <div class="chat-header-title">Evaluation Assistant</div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-msg assistant">
+                Hi! I can answer questions about this tender evaluation. Try asking:
+                <br>• "What is the PQC status of Arms Peripherals?"
+                <br>• "Which vendors are missing execution proof?"
+                <br>• "Compare Heamons and Luxmi"
+            </div>
+        </div>
+        <div class="chat-input-wrap">
+            <input class="chat-input" id="chat-input" placeholder="Ask about the evaluation..." autocomplete="off">
+            <button class="chat-send" id="chat-send">Send</button>
+        </div>
+    </div>
+</div>
+
+<!-- Source Viewer Modal -->
+<div class="modal-overlay" id="source-modal">
+    <div class="modal-content" id="source-modal-content">
+        <button class="modal-close" id="modal-close">✕</button>
+        <h3 id="modal-title" style="margin-bottom: 1rem;"></h3>
+        <div id="modal-body" style="position: relative;"></div>
+    </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

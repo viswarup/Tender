@@ -1,0 +1,47 @@
+KNOWN ISSUES — READ BEFORE DEMOING
+==================================
+
+1. ALL FIVE BIDDERS SHOW "ACCEPTED"
+   This is a defect, not a result.
+
+   The execution-proof check marks a purchase order as proven if any document
+   containing that PO number also contains the word "invoice". GeM contracts
+   carry the boilerplate "GST/Tax invoice to be raised in the name of..." — it
+   appears 55 times in one contract in this dataset. So every PO is treated as
+   proven by the contract itself.
+
+   This contradicts the project's own governing rule: a GeM contract shows an
+   order was placed, never that work was completed. Valid proof is an invoice,
+   a bank certificate of payment, an execution certificate with executed value,
+   or a prior IOCL work record.
+
+   Effect: the gate that should separate bidders is effectively off, so nobody
+   is rejected or queried.
+
+   IF ASKED, SAY THIS: the extraction, classification and traceability layers
+   are working and visible on screen. The scoring rule on top of them is being
+   corrected, and it is a contained fix in one function.
+
+2. STARTUP EXEMPTION IS TOO EAGER
+   Exemption triggers on the bare string "DPIIT" anywhere in a bidder's
+   documents — including a declaration stating the bidder is NOT a recognised
+   startup. ARMS PERIPHERALS is accepted on this basis.
+
+3. ONE PO VALUE PARSED AS ZERO
+   ARMS PERIPHERALS' only purchase order reads 0.0 because the value regex fell
+   through to its "0" default. A failed parse is currently indistinguishable
+   from a genuinely small order.
+
+4. THRESHOLDS DISAGREE WITH THE DOCUMENTATION
+   The config uses 1,82,000 / 2,43,000 / 3,03,000 per order. The system
+   documentation states 1,51,500 / 2,02,000 / 3,03,000. Confirm against the
+   tender's PQC document before quoting figures to a customer.
+
+None of the above affects the parts of the demo that show how the system reads
+documents. They affect the final accept/reject decision only.
+
+
+RESOLVED
+--------
+- Seven pages previously displayed an OCR failure message instead of text.
+  They were re-OCR'd with Gemini 2.5 Flash and now show correct content.

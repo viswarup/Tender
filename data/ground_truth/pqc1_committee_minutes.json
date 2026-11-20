@@ -1,0 +1,59 @@
+{
+  "_source": "raw_bids/ARC Cartidges_PQC1/PQC1.pdf — IOCL committee minutes-1, tender 9400M25A37, dated 23/01/2026",
+  "_transcription": "Transcribed by reading rendered PDF pages 2-4, 8-9, 13-14, 17. The extracted text dump (data/pqc1_text.txt) splices tables across bidders and must not be used as ground truth.",
+  "_proof_values": "CRAC_SUBMITTED = committee accepted execution proof; NOT_SUBMITTED = committee found no proof; REJECTED = PO rejected on value/criteria, proof not assessed",
+  "bidders": {
+    "ALANKAR DISTRIBUTORS": {
+      "verdict": "QUERIED", "pdf_pages": "2-3",
+      "recommendation": "Bidder to submit corresponding execution documents as proof against the Copy of POs submitted",
+      "purchase_orders": [
+        {"sno": 1, "po_number": "GEMC-511687706010310", "issuer": "Controller General of Defence Accounts", "date": "27.03.2023", "value": 5384223, "similar_item": "YES", "proof": "NOT_SUBMITTED"},
+        {"sno": 2, "po_number": "GEMC-511687732777771", "issuer": "Ministry of Civil Aviation", "date": "10.10.2023", "value": 4326954, "similar_item": "YES", "proof": "NOT_SUBMITTED"},
+        {"sno": 3, "po_number": "GEMC-511687771151409", "issuer": "Indo Tibetan Border Police (ITBP)", "date": "28.06.2023", "value": 2684305, "similar_item": "YES", "proof": "NOT_SUBMITTED"},
+        {"sno": 4, "po_number": "GEMC-511687731854057", "issuer": "Office of DG (MED & COS)", "date": "28.11.2024", "value": 1979332, "similar_item": "PARTIAL", "proof": "NOT_SUBMITTED"},
+        {"sno": 5, "po_number": "GEMC-511687778717530", "issuer": "Controller General of Defence Account", "date": "08.04.2025", "value": 483320, "similar_item": "YES", "proof": "NOT_SUBMITTED"},
+        {"sno": 6, "po_number": "GEMC-511687732609862", "issuer": "Election Commission of India", "date": "23.12.2022", "value": 4548153, "similar_item": "YES", "proof": "NOT_SUBMITTED"}
+      ]
+    },
+    "ARMS PERIPHERALS": {
+      "verdict": "ACCEPTED", "pdf_pages": "3-4",
+      "recommendation": "Acceptable against single order value criteria based on PO mentioned at S.no 1",
+      "purchase_orders": [
+        {"sno": 1, "po_number": "GEMC-511687712377171", "issuer": "IOCL- Panipat Refinery", "date": "26.11.2024", "value": 3633750, "similar_item": "YES", "proof": "CRAC_SUBMITTED"}
+      ]
+    },
+    "HEAMONS SYSTEMS": {
+      "verdict": "ACCEPTED", "pdf_pages": "8-9",
+      "recommendation": "Acceptable against single order value criteria based on PO mentioned at S.no 1",
+      "purchase_orders": [
+        {"sno": 1, "po_number": "GEMC-511687703758674", "issuer": "Northern Railway", "date": "01.03.2024", "value": 814515, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 2, "po_number": "GEMC-511687756260137", "issuer": "Delhi Transport Corporation (DTC)", "date": "05.05.2022", "value": 1232880, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 3, "po_number": "GEMC-511687778503573", "issuer": "Rajya Sabha Secretariat", "date": "06.06.2023", "value": 355320, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 4, "po_number": "GEMC-511687764879791", "issuer": "All India Institute of Medical Sciences (AIIMS)", "date": "12.03.2025", "value": 415550, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 5, "po_number": "GEMC-511687713558176", "issuer": "All India Institute of Medical Sciences (AIIMS)", "date": "13.02.2025", "value": 398600, "similar_item": "YES", "proof": "CRAC_SUBMITTED"}
+      ]
+    },
+    "LUXMI ENTERPRISES": {
+      "verdict": "ACCEPTED", "pdf_pages": "13-14",
+      "recommendation": "Acceptable against single order value criteria based on PO mentioned at S.no 1",
+      "purchase_orders": [
+        {"sno": 1, "po_number": "GEMC-511687797893122", "issuer": "Society for Promotion of IT in Chandigarh (SPIC)", "date": "04.06.2025", "value": 842200, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 2, "po_number": "GEMC-511687773947804", "issuer": "Border Road Organisation", "date": "28.03.2025", "value": 311400, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 3, "po_number": "GEMC-511687735789191", "issuer": "Council of Scientific and Industrial Research (CSIR)", "date": "30.01.2024", "value": 482400, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 4, "po_number": "GEMC-511687718050783", "issuer": "Indian Army", "date": "29.07.2021", "value": 193100, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 5, "po_number": "GEMC-511687754844117", "issuer": "IOCL- Panipat Refinery", "date": "06.10.2020", "value": 918575, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 6, "po_number": "GEMC-511687757736947", "issuer": "Airports Authority of India", "date": "08.06.2023", "value": 302640, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 7, "po_number": "GEMC-511687794687805", "issuer": "Society for Promotion of IT in Chandigarh (SPIC)", "date": "14.06.2023", "value": 1065150, "similar_item": "YES", "proof": "CRAC_SUBMITTED"},
+        {"sno": 8, "po_number": "GEMC-511687722195741", "issuer": "IOCL- Panipat Refinery", "date": "22.06.2021", "value": 423360, "similar_item": "YES", "proof": "CRAC_SUBMITTED"}
+      ]
+    },
+    "RAVECHI CARTRIDGE": {
+      "verdict": "REJECTED", "pdf_pages": "17",
+      "recommendation": "Rejected - As the PO value meeting similar item definition are not meeting minimum PQC requirement",
+      "purchase_orders": [
+        {"sno": 1, "po_number": "GEMC-511687709668754", "issuer": "Container Corporation of India Limited", "date": "12.08.2024", "value": 45000, "similar_item": "YES", "proof": "REJECTED"},
+        {"sno": 2, "po_number": "GEMC-511687749581305", "issuer": "Intelligence Bureau", "date": "11.10.2023", "value": 51750, "similar_item": "YES", "proof": "REJECTED"}
+      ]
+    }
+  }
+}

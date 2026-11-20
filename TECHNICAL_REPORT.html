@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procura - Technical Architecture & Pipeline Report</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            /* Dark Theme Variables */
+            --bg-primary: #0b0f19;
+            --bg-secondary: #131a2e;
+            --bg-tertiary: #1b2541;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-color: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --accent-cyan: #06b6d4;
+            --border-color: #243256;
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --code-bg: #090d16;
+            --tag-yellow: #eab308;
+            --tag-yellow-bg: rgba(234, 179, 8, 0.1);
+            --tag-green: #10b981;
+            --tag-green-bg: rgba(16, 185, 129, 0.1);
+            --tag-red: #ef4444;
+            --tag-red-bg: rgba(239, 68, 68, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            /* Light Theme Variables */
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #2563eb;
+            --accent-glow: rgba(37, 99, 235, 0.1);
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            --accent-cyan: #0891b2;
+            --border-color: #cbd5e1;
+            --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+            --code-bg: #f8fafc;
+            --tag-yellow: #ca8a04;
+            --tag-yellow-bg: rgba(202, 138, 4, 0.1);
+            --tag-green: #15803d;
+            --tag-green-bg: rgba(21, 128, 61, 0.1);
+            --tag-red: #b91c1c;
+            --tag-red-bg: rgba(185, 28, 28, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: var(--transition);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Table of Contents */
+        .sidebar {
+            width: 320px;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.75rem;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+
+        .logo-badge {
+            font-size: 0.65rem;
+            background-color: var(--accent-glow);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+
+        .toc-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .toc-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .toc-link:hover, .toc-link.active {
+            color: var(--text-primary);
+            background-color: var(--bg-tertiary);
+            transform: translateX(4px);
+        }
+
+        .toc-link.active {
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .theme-toggle-btn {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.85rem;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        /* Main Content Wrapper */
+        .main-content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 4rem 6rem;
+            max-width: 1200px;
+            transition: var(--transition);
+        }
+
+        header {
+            margin-bottom: 3.5rem;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 0.75rem;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--text-primary) 30%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-subtitle {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .section-divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 2.5rem 0;
+            border: none;
+        }
+
+        /* Section Styling */
+        section {
+            scroll-margin-top: 2rem;
+            margin-bottom: 4.5rem;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Alert Callouts */
+        .alert {
+            background-color: var(--bg-secondary);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            box-shadow: var(--card-shadow);
+        }
+
+        .alert-icon {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            margin-top: 0.2rem;
+        }
+
+        .alert-content p {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .alert-important {
+            border-left-color: var(--tag-yellow);
+            background-color: var(--tag-yellow-bg);
+        }
+        .alert-important .alert-icon {
+            color: var(--tag-yellow);
+        }
+
+        /* Cards and Lists */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .step-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem 2rem;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .step-badge {
+            background-color: var(--accent-glow);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--tag-green);
+            font-size: 0.85rem;
+            top: 0.2rem;
+        }
+
+        /* Diagrams */
+        .diagram-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Tables styling */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin: 2rem 0;
+            box-shadow: var(--card-shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 1rem 1.25rem;
+        }
+
+        th {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .badge-yellow { color: var(--tag-yellow); background-color: var(--tag-yellow-bg); border: 1px solid rgba(234, 179, 8, 0.2); }
+        .badge-green { color: var(--tag-green); background-color: var(--tag-green-bg); border: 1px solid rgba(16, 185, 129, 0.2); }
+        .badge-red { color: var(--tag-red); background-color: var(--tag-red-bg); border: 1px solid rgba(239, 68, 68, 0.2); }
+
+        /* Code Blocks */
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            box-shadow: var(--card-shadow);
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        p code {
+            background-color: var(--bg-tertiary);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 3rem 2rem;
+            }
+        }
+
+        /* Print optimization for PDF output */
+        @media print {
+            .sidebar {
+                display: none !important;
+            }
+            .main-content {
+                margin-left: 0 !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            body {
+                background-color: #ffffff !important;
+                color: #0f172a !important;
+            }
+            h1, h2, h3, p, td, th, li {
+                color: #0f172a !important;
+            }
+            h1 {
+                background: none !important;
+                -webkit-text-fill-color: initial !important;
+                color: #0f172a !important;
+                font-size: 2.2rem !important;
+            }
+            h2::before {
+                background-color: #2563eb !important;
+            }
+            pre {
+                border-color: #cbd5e1 !important;
+                background-color: #f8fafc !important;
+                box-shadow: none !important;
+            }
+            code {
+                color: #0f172a !important;
+            }
+            p code {
+                background-color: #f1f5f9 !important;
+            }
+            .step-card, .table-responsive, .diagram-container {
+                box-shadow: none !important;
+                border-color: #cbd5e1 !important;
+                page-break-inside: avoid;
+            }
+            tr {
+                page-break-inside: avoid;
+            }
+            .theme-toggle-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <i class="fa-solid fa-shield-halved logo-icon"></i>
+            <span class="logo-text">Procura</span>
+            <span class="logo-badge">V1.2</span>
+        </div>
+        
+        <h3 class="toc-title">Table of Contents</h3>
+        <ul class="toc-menu">
+            <li><a href="#summary" class="toc-link active" onclick="setActive(this)"><i class="fa-solid fa-compass"></i> Executive Summary</a></li>
+            <li><a href="#architecture" class="toc-link" onclick="setActive(this)"><i class="fa-solid fa-sitemap"></i> High-Level Architecture</a></li>
+            <li><a href="#pipeline" class="toc-link" onclick="setActive(this)"><i class="fa-solid fa-gears"></i> Processing Pipeline</a></li>
+            <li><a href="#models" class="toc-link" onclick="setActive(this)"><i class="fa-solid fa-microchip"></i> Models & Infrastructure</a></li>
+            <li><a href="#security" class="toc-link" onclick="setActive(this)"><i class="fa-solid fa-lock"></i> Security & Hardening</a></li>
+            <li><a href="#evaluation" class="toc-link" onclick="setActive(this)"><i class="fa-solid fa-bullseye"></i> Accuracy Evaluation</a></li>
+            <li><a href="#run" class="toc-link" onclick="setActive(this)"><i class="fa-solid fa-terminal"></i> How to Run & Interact</a></li>
+        </ul>
+
+        <button class="theme-toggle-btn" onclick="toggleTheme()">
+            <i id="theme-icon" class="fa-solid fa-sun"></i>
+            <span id="theme-text">Light Theme</span>
+        </button>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header>
+            <h1>Procura: Technical Architecture & Pipeline Report</h1>
+            <div class="header-subtitle">An Enterprise-Grade, Layout-Aware AI System for Automated Commercial Bid Evaluation</div>
+        </header>
+
+        <hr class="section-divider">
+
+        <!-- 1. Executive Summary -->
+        <section id="summary">
+            <h2>1. Executive Summary & Core Concept</h2>
+            <p>In public sector procurement, verifying bidder compliance is one of the most resource-intensive steps. Bidders submit folders containing hundreds of pages of unorganized PDF documents, including Udyam Registrations, PAN cards, GST certificates, Manufacturer Authorization Forms (MAFs), past Purchase Orders (POs), and Invoices/Completion certificates.</p>
+            <p>Evaluating compliance against <strong>Pre-Qualification Criteria (PQC)</strong> manually takes hours to days per bidder, is prone to human bias, and lacks clear audit trails.</p>
+            <p><strong>Procura</strong> solves this by automating the entire commercial evaluation workflow. It digests bid folders, extracts critical metadata with pixel-perfect document coordinates, checks vendor eligibility against multi-option PQC policies (e.g., experience values and dates), matches orders to proof-of-execution documents, and generates a fully traceable visual dashboard and a RAG (Retrieval-Augmented Generation) query system.</p>
+        </section>
+
+        <!-- 2. High-Level Architecture -->
+        <section id="architecture">
+            <h2>2. High-Level Architecture</h2>
+            <p>The system processes raw PDF bids in a sequential pipeline, mapping unstructured inputs to a structured JSON database, a graph network, and a vector search index.</p>
+            
+            <div class="diagram-container">
+                <div class="mermaid">
+                    graph TD
+                        A[Unsorted Bid PDFs] --> B[1. Ingestion & PDF Processing]
+                        B --> C[2. VLM OCR & Bounding Boxes]
+                        C --> D[3. Page Classification & Segmentation]
+                        D --> E[4. Structured Data Extraction]
+                        E --> F[5. PQC Rules & Exemption Engine]
+                        F --> G[6. Knowledge Graph & Vector RAG]
+                        G --> H[7. Interactive Review Dashboard]
+                        
+                        style B fill:#1b2541,stroke:#3b82f6,stroke-width:2px,color:#fff
+                        style C fill:#1b2541,stroke:#3b82f6,stroke-width:2px,color:#fff
+                        style D fill:#1b2541,stroke:#3b82f6,stroke-width:2px,color:#fff
+                        style E fill:#1b2541,stroke:#10b981,stroke-width:2px,color:#fff
+                        style F fill:#1b2541,stroke:#ef4444,stroke-width:2px,color:#fff
+                        style G fill:#1b2541,stroke:#ca8a04,stroke-width:2px,color:#fff
+                        style H fill:#1b2541,stroke:#9ca3af,stroke-width:2px,color:#fff
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Deep-Dive Pipeline -->
+        <section id="pipeline">
+            <h2>3. Deep-Dive: The Processing Pipeline</h2>
+            <p>The processing pipeline runs in distinct stages to minimize GPU load and maximize execution speed:</p>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-title">Step 1: Ingestion & Text Extraction</div>
+                        <span class="step-badge">pdf_processor.py</span>
+                    </div>
+                    <ul>
+                        <li><strong>Dynamic Native Extraction</strong>: The system parses the PDF using <code>pypdf</code>. If the page contains native digital text (at least 30 characters), it extracts it directly.</li>
+                        <li><strong>On-Demand Rendering</strong>: If the page has no extractable text (meaning it is a scanned image), it marks it for OCR. PyMuPDF (<code>fitz</code>) renders only these specific pages as PNG images. This <strong>lazy-rendering</strong> approach saves massive processing time and storage compared to rendering entire documents.</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-title">Step 2: VLM-Based OCR & Coordinate-Mapping</div>
+                        <span class="step-badge">vlm_engine.py</span>
+                    </div>
+                    <ul>
+                        <li><strong>Primary VLM</strong>: <code>qwen2.5vl:3b</code> running locally on Ollama.</li>
+                        <li><strong>Fast Mode</strong>: Used by default to retrieve plain text quickly (3-5x faster) without layout metadata.</li>
+                        <li><strong>Full Mode</strong>: Retrieves both text and bounding box locations. The VLM outputs a structured JSON object containing text blocks with coordinates normalized as percentages: <code>[x_min, y_min, x_max, y_max]</code>.</li>
+                        <li><strong>Caching Layer</strong>: Results are written to a localized cache file (<code>data/ocr_cache.json</code>) to guarantee that identical pages are never processed twice.</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-title">Step 3: Document Segmentation & Multi-Page Classification</div>
+                        <span class="step-badge">doc_classifier.py</span>
+                    </div>
+                    <ul>
+                        <li><strong>Page Snippets</strong>: The system extracts the headers and footers (first 400 and last 300 characters) of each page.</li>
+                        <li><strong>LLM Segmentation</strong>: The router sends the snippets to <code>llama3:8b</code> to split the document into logical boundaries.</li>
+                        <li><strong>Segment Mapping</strong>: The LLM classifies page ranges into logical files (e.g., Pages 1-3 = <code>UDYAM_MSME</code>, Pages 4-8 = <code>PURCHASE_ORDER</code>, Page 9 = <code>INVOICE</code>).</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-title">Step 4: Structured Data Extraction</div>
+                        <span class="step-badge">data_extractor.py</span>
+                    </div>
+                    <ul>
+                        <li><strong>GeM Contract POs</strong>: High-speed regex heuristics match standard patterns (such as <code>GEMC-</code> contract numbers and pricing tables) instantly without querying the LLM.</li>
+                        <li><strong>Non-GeM POs</strong>: The LLM extracts the PO Number, Issuing Organization, Date, and Order Value.</li>
+                        <li><strong>CA Certificates / Udyam / GST</strong>: The LLM extracts CA names, enterprise types (Micro/Small/Medium), major activity, and registration details.</li>
+                        <li><strong>Monetary Normalization</strong>: A parser converts strings containing currency symbols, commas, and Indian numbering formats (Lakhs/Crores) into standard float numbers (INR).</li>
+                        <li><strong>Coordinate Mapping</strong>: The system searches for the exact text of extracted values in the PDF to determine their coordinate boundaries, populating <code>SourceReference</code> models.</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-title">Step 5: PQC Rules & Exemption Engine</div>
+                        <span class="step-badge">pqc_evaluator.py</span>
+                    </div>
+                    <ul>
+                        <li><strong>Commercial Value Checks</strong>: Compares PO values against three options (e.g., Option A: 3 orders of ₹1.82L; Option B: 2 orders of ₹2.43L; Option C: 1 order of ₹3.03L).</li>
+                        <li><strong>Similar Item Similarity Check</strong>: Validates the description of items ordered (e.g., checks if the past order was for "Supply of toners or cartridges"). It uses a keyword checklist first, falling back to a structured LLM similarity check prompt for ambiguous items.</li>
+                        <li><strong>Exemptions Check</strong>:
+                            <ul>
+                                <li><strong>MSE Exemption</strong>: If Udyam data indicates the vendor is a Micro or Small enterprise.</li>
+                                <li><strong>Startup Exemption</strong>: Scans documents for DPIIT registration text.</li>
+                                <li>If exempted, the engine relaxes or waives the experience and monetary requirements.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-title">Step 6: Work Completion Proof Cross-Referencing</div>
+                        <span class="step-badge">Data Cross-Linker</span>
+                    </div>
+                    <div class="alert alert-important">
+                        <i class="fa-solid fa-triangle-exclamation alert-icon"></i>
+                        <div class="alert-content">
+                            <p><strong>Audit Rule</strong>: A GeM contract or Purchase Order is <strong>NOT</strong> proof of work completion.</p>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>To prevent fraud and ensure strict commercial compliance, the system cross-references each Purchase Order against Invoices (<code>INVOICE</code>) and client execution certificates (<code>EXECUTION_PROOF</code>).</li>
+                        <li>If a matching PO number is found in a completion proof or self-certified invoice, the status is set to <code>SUBMITTED</code>. If no matching proof is found, the PO's execution status is flagged as <code>NOT_SUBMITTED</code>, marking the vendor as <code>QUERIED</code> or <code>REJECTED</code>.</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-title">Step 7: Knowledge Graph & Hybrid RAG System</div>
+                        <span class="step-badge">chatbot/</span>
+                    </div>
+                    <ul>
+                        <li><strong>Knowledge Graph (NetworkX)</strong>: Models the relations between vendors, documents, POs, values, and audit outcomes. This handles structured queries (e.g., <em>"Which vendors are accepted under Option B?"</em>).</li>
+                        <li><strong>Vector Store (ChromaDB + nomic-embed-text)</strong>: Indexes chunked document text for semantic lookup (e.g., <em>"Find Kyocera authorization letters"</em>).</li>
+                        <li><strong>Hybrid Router</strong>: Routes questions to the Graph, Vector DB, or a combined ("Hybrid") context, feeding the aggregated details to the chatbot model (<code>gpt-oss:20b</code>).</li>
+                    </ul>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-title">Step 8: Interactive Audit Dashboard & Web API</div>
+                        <span class="step-badge">server.py</span>
+                    </div>
+                    <ul>
+                        <li><strong>Traceability Mappings</strong>: Binds frontend actions to file resources. Clicking on an extracted value sends its page number and bounding box coordinates to the viewer.</li>
+                        <li><strong>Layout Renderings</strong>: Serves page images on demand.</li>
+                        <li><strong>Security & Auth</strong>: Hardens endpoints against unauthorized calls using API key checking (<code>X-API-Key</code> headers or <code>?api_key=</code> queries).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Models & Infrastructure -->
+        <section id="models">
+            <h2>4. Models and Infrastructure Registry</h2>
+            <p>The system is configured to prioritize local processing for maximum data sovereignty, but it dynamically falls back to cloud APIs when needed.</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model / Service</th>
+                            <th>Backend Port / Platform</th>
+                            <th>Purpose in System</th>
+                            <th>Configuration File Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><code>qwen2.5vl:3b</code></strong></td>
+                            <td>Ollama (Local)</td>
+                            <td>VLM OCR & Bounding Box Coordinates</td>
+                            <td><code>ocr_vision</code> config</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>llama3:8b</code></strong></td>
+                            <td>Ollama (Local)</td>
+                            <td>Page-by-page document classification</td>
+                            <td><code>classifier</code> config</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>gpt-oss:20b</code></strong></td>
+                            <td>Ollama (Local)</td>
+                            <td>Metadata extraction & rules check</td>
+                            <td><code>extractor</code> / <code>evaluator</code> config</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>nomic-embed-text</code></strong></td>
+                            <td>Ollama (Local)</td>
+                            <td>ChromaDB text embeddings</td>
+                            <td><code>embeddings</code> config</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>gemini-2.5-flash</code></strong></td>
+                            <td>Google Cloud API</td>
+                            <td>Primary Cloud Fallback (OCR & LLM)</td>
+                            <td>Centralized router fallback</td>
+                        </tr>
+                        <tr>
+                            <td><strong><code>llama-3.3-70b</code></strong></td>
+                            <td>OpenRouter API</td>
+                            <td>Secondary Cloud Fallback (LLM queries)</td>
+                            <td>Centralized router fallback</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Centralized Router Fallback Chain</h3>
+            <p>Every time the system calls an LLM, it routes through a centralized resilience chain defined in <code>pipeline/llm_router.py</code>:</p>
+            <ol style="list-style: decimal; padding-left: 2rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Google Gemini API</strong>: Uses <code>gemini-2.5-flash</code> (or <code>gemini-1.5-flash</code>) if <code>GEMINI_API_KEY</code> is present in the environment.</li>
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">OpenRouter API</strong>: Falls back to <code>google/gemini-2.5-flash</code> or free OpenRouter models if Gemini fails.</li>
+                <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Ollama</strong>: Falls back to the local models (<code>gpt-oss:20b</code>, <code>llama3:8b</code>) if cloud APIs are unavailable.</li>
+            </ol>
+        </section>
+
+        <!-- 5. Security & Hardening -->
+        <section id="security">
+            <h2>5. Security & UI Layout Hardening</h2>
+            <p>The codebase includes several layers of production hardening:</p>
+            <ul>
+                <li><strong>Path Traversal Shielding</strong>: FastAPI endpoints validate that file paths requested by the frontend are strictly within the designated workspace/data directories.</li>
+                <li><strong>XSS Mitigation</strong>: The JavaScript frontend utilizes a helper function (<code>escapeHtml()</code>) to strip out HTML tags from VLM/LLM string outputs, preventing malicious scripts embedded in document text from executing.</li>
+                <li><strong>API Key Authorization</strong>: Requests require an <code>X-API-Key</code> header. To accommodate HTML elements (like <code>&lt;img&gt;</code> tags that do not support custom request headers natively), the API key validation function in <code>server.py</code> checks both headers and URL query parameters.</li>
+                <li><strong>Viewport CSS Layout Fixed</strong>: Resolved a scroll lock bug in Step 3 of the review dashboard where the sidebar containing document details would not scroll. By constraining the parent layout using <code>height: 100vh</code> rather than <code>min-height: 100vh</code>, the sidebar scroll panels trigger correctly.</li>
+            </ul>
+        </section>
+
+        <!-- 6. Evaluation Framework -->
+        <section id="evaluation">
+            <h2>6. System Accuracy Evaluation Framework</h2>
+            <p>To evaluate and guarantee the accuracy of Procura in production, audits can be performed at several key checkpoints in the pipeline. Below is the framework outlining where evaluations are conducted and what ground-truth data is required for each.</p>
+
+            <h3>6.1 Evaluation Checkpoints</h3>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Checkpoint</th>
+                            <th>Target Metric</th>
+                            <th>Metric Definition</th>
+                            <th>Impact of Error</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. OCR & VLM Text Extraction</strong></td>
+                            <td>Character Error Rate (CER) & Word Error Rate (WER)</td>
+                            <td>Measures the percentage of insertion, deletion, and substitution errors in the transcribed text compared to manual transcription.</td>
+                            <td><span class="badge badge-yellow">Fails downstream keyword matching</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Document Classification & Segmentation</strong></td>
+                            <td>Page Classification F1-Score & Segment IoU</td>
+                            <td>Measures if pages are mapped to the correct document type (e.g. GST, PO) and if segments are split correctly.</td>
+                            <td><span class="badge badge-yellow">Merged documents are misclassified</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Structured Metadata Extraction</strong></td>
+                            <td>Exact Match (EM) & Relative Numeric Error</td>
+                            <td>Checks if fields (PO numbers, Udyam trade names, GSTINs, PO dates, monetary values) are extracted and parsed correctly.</td>
+                            <td><span class="badge badge-red">Wrong PQC pass/fail decisions</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. PQC Evaluation Rules Engine</strong></td>
+                            <td>Classification Accuracy & Decision Matrix</td>
+                            <td>Evaluates the system's final decisions (ACCEPTED, REJECTED, QUERIED) against human auditor consensus.</td>
+                            <td><span class="badge badge-red">False Acceptances or Rejections</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Traceability Bounding Box Hit Rate</strong></td>
+                            <td>Bounding Box Intersection-over-Union (IoU)</td>
+                            <td>Verifies if the highlighted coordinate box in the document viewer covers the target text block.</td>
+                            <td><span class="badge badge-yellow">Highlights blank space or wrong sections</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>6. Chatbot hybrid RAG System</strong></td>
+                            <td>Groundedness, Answer Relevance, and Retrieval Precision</td>
+                            <td>Evaluates if answers are grounded in context, retrieve the correct documents, and contain no hallucinated claims.</td>
+                            <td><span class="badge badge-yellow">Evaluators get inaccurate advice</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>6.2 Ground-Truth Data Requirements</h3>
+            <p>Running these evaluations requires establishing a curated <strong>Ground-Truth Dataset (Gold Standard)</strong>. The table below lists the datasets and schemas needed:</p>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Evaluation Checkpoint</th>
+                            <th>Required Ground-Truth Data</th>
+                            <th>Schema / Format Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>OCR & Text Extraction</strong></td>
+                            <td>A set of 50-100 representative scanned and digital PDF pages, paired with manually double-verified text files.</td>
+                            <td>A folder of <code>.png</code> page images and matching <code>.txt</code> manual transcription files.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Document Classification</strong></td>
+                            <td>Page-level labels for vendor PDF packages showing the document segment type and range.</td>
+                            <td>JSON map:<br><code>{ "doc_1.pdf": [{"start": 1, "end": 4, "type": "PURCHASE_ORDER"}] }</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Structured Extraction</strong></td>
+                            <td>A key-value manifest containing the correct metadata values for each extracted file.</td>
+                            <td>JSON file:<br><code>{ "po_1.pdf": { "po_number": "GEMC-5116", "po_value_numeric": 310000.0 } }</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PQC Decisions</strong></td>
+                            <td>The master evaluation PQC matrix (e.g. <code>pqc1.pdf</code> ground-truth) detailing vendor statuses and reasons.</td>
+                            <td>Structured table or Excel sheet detailing the final status, met option, and exemptions for all test vendors.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Traceability Bounding Box</strong></td>
+                            <td>Manually marked bounding boxes for critical metadata fields.</td>
+                            <td>Coordinate ranges in JSON:<br><code>{ "po_number": { "page": 1, "bbox": [10.2, 15.5, 45.1, 18.2] } }</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chatbot hybrid RAG</strong></td>
+                            <td>A test suite of 50 common auditor questions, matched with reference answers and valid source citations.</td>
+                            <td>JSON list:<br><code>[ { "question": "...", "answer": "...", "sources": ["VENDOR:file.pdf:p1"] } ]</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 7. How to Run -->
+        <section id="run">
+            <h2>7. How to Run and Interact</h2>
+            
+            <h3>Running the Evaluation Pipeline</h3>
+            <p>Run the orchestrator script to process a vendor's folder:</p>
+            <pre><code>PYTHONPATH=. ./.venv/bin/python3 scripts/run_pipeline.py --vendor "HEAMONS SYSTEMS"</code></pre>
+
+            <h3>Spinning up the API Server & Dashboard</h3>
+            <p>Launch the FastAPI server (running on port <code>8000</code> by default):</p>
+            <pre><code>PYTHONPATH=. ./.venv/bin/python3 server.py</code></pre>
+            <p>Open <a href="http://localhost:8000" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">http://localhost:8000</a> in your browser to view the interactive dashboard, browse the visual bounding boxes, and chat with the RAG evaluation assistant.</p>
+        </section>
+    </main>
+
+    <script>
+        // Set active link in Table of Contents
+        function setActive(elem) {
+            const links = document.querySelectorAll('.toc-link');
+            links.forEach(l => l.classList.remove('active'));
+            elem.classList.add('active');
+            
+            // On mobile, close sidebar after clicking
+            if (window.innerWidth <= 1024) {
+                document.querySelector('.sidebar').classList.remove('open');
+            }
+        }
+
+        // Toggle Dark/Light Theme
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            
+            const btnIcon = document.getElementById('theme-icon');
+            const btnText = document.getElementById('theme-text');
+            
+            if (newTheme === 'light') {
+                btnIcon.className = 'fa-solid fa-moon';
+                btnText.textContent = 'Dark Theme';
+                mermaid.initialize({ startOnLoad: true, theme: 'default' });
+            } else {
+                btnIcon.className = 'fa-solid fa-sun';
+                btnText.textContent = 'Light Theme';
+                mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+            }
+            
+            // Re-render mermaid diagrams with new theme
+            const graphCode = document.querySelector('.mermaid').getAttribute('data-processed');
+            if (graphCode) {
+                location.reload(); // Quick reset to redraw mermaid smoothly
+            }
+        }
+
+        // Track scrolling to highlight TOC links
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.toc-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

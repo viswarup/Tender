@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IOCL Tender Evaluation — Demo</title>
+<link href="fonts.css" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0f1a; --panel: #151c2e; --border: rgba(255,255,255,.09);
+    --text: #e7ecf5; --muted: #93a0b8; --accent: #58a6ff; --good: #3fb950;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font-family: 'Inter', system-ui, sans-serif; min-height: 100vh;
+         display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+  .wrap { width: 100%; max-width: 860px; }
+  h1 { font-family: 'Outfit', system-ui, sans-serif; font-size: 2rem;
+        margin: 0 0 6px; letter-spacing: -.02em; }
+  .sub { color: var(--muted); margin: 0 0 6px; font-size: .95rem; }
+  .built { color: var(--muted); font-size: .78rem; font-family: 'JetBrains Mono', monospace;
+            margin: 0 0 30px; opacity: .75; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+  a.card { display: block; text-decoration: none; color: inherit; background: var(--panel);
+            border: 1px solid var(--border); border-radius: 14px; padding: 24px;
+            transition: border-color .15s, transform .15s; }
+  a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card h2 { font-family: 'Outfit', system-ui, sans-serif; font-size: 1.15rem;
+              margin: 0 0 8px; color: var(--accent); }
+  .card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.55; }
+  .tag { display: inline-block; margin-top: 14px; font-size: .7rem; letter-spacing: .08em;
+          text-transform: uppercase; color: var(--good); border: 1px solid var(--good);
+          border-radius: 999px; padding: 3px 10px; }
+  .note { margin-top: 30px; background: rgba(210,153,34,.09);
+           border: 1px solid rgba(210,153,34,.35); border-radius: 12px;
+           padding: 16px 18px; font-size: .84rem; color: #e3cf9a; line-height: 1.6; }
+  .note b { color: #f0dfae; }
+  .offline { margin-top: 18px; font-size: .78rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>IOCL GeM Tender Evaluation</h1>
+  <p class="sub">AI-assisted commercial bid evaluation — offline demo</p>
+  <p class="built">Bundle built 18 Nov 2026 &middot; 5 bidders &middot; 239 document pages</p>
+
+  <div class="cards">
+    <a class="card" href="review.html">
+      <h2>Verification Dashboard &rarr;</h2>
+      <p>The auditor's view. Walk all five pipeline stages for any bidder:
+         document classification and segmentation, OCR against the rendered page,
+         field-level extraction with click-to-source traceability, PO-to-proof
+         mapping, and the final PQC verdict.</p>
+      <span class="tag">Start here</span>
+    </a>
+    <a class="card" href="index.html">
+      <h2>Summary Dashboard &rarr;</h2>
+      <p>The reviewer's overview. Bidder statuses at a glance, per-vendor
+         extracted entities, source-page inspection and the ground-truth
+         comparison for HEAMONS SYSTEMS.</p>
+    </a>
+  </div>
+
+  <div class="note">
+    <b>Note for the presenter:</b> all five bidders currently show ACCEPTED.
+    That is a known defect in the execution-proof check, not a real result —
+    the evaluator accepts a GeM contract as its own proof of completion.
+    See <b>KNOWN-ISSUES.txt</b> before demoing. Everything else on screen
+    (classification, OCR, extraction, traceability) reflects genuine output.
+  </div>
+
+  <p class="offline">Runs entirely offline — no internet, no install, no server.</p>
+</div>
+</body>
+</html>

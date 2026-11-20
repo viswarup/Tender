@@ -1,0 +1,1329 @@
+{
+  "RAVECHI CARTRIDGE": {
+    "17599869152781.pdf": {
+      "document_type": "SELF_DECLARATION",
+      "confidence": 0.92,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.92,
+          "summary": "This document is a self-declaration from Ravechi Cartridge certifying that the firm is not under liquidation or bankrupt and that their products have 100% Make in India content.",
+          "reasoning": "The page contains a formal letter addressed 'TO WHOM IT MAY CONCERN' with explicit statements certifying the firm's financial status and the 'Make in India' content of its products, which are characteristic of a self-declaration document."
+        }
+      ]
+    },
+    "17599895402721.pdf": {
+      "document_type": "UDYAM_MSME",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 3,
+          "document_type": "UDYAM_MSME",
+          "confidence": 0.99,
+          "summary": "This document is an Udyam Registration Certificate for Ravechi Cartridge, detailing its registration number, enterprise type, major activities, and other business details.",
+          "reasoning": "Page 1 explicitly states 'UDYAM REGISTRATION CERTIFICATE' and provides the Udyam Registration Number. Pages 2 and 3 continue with detailed information related to the same enterprise, including activity classifications, owner details, and registration dates, all consistent with a multi-page Udyam registration document."
+        }
+      ]
+    },
+    "17599868727122.pdf": {
+      "document_type": "MAF_OEM_AUTH",
+      "confidence": 0.7,
+      "reasoning": "Segmented into 2 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.7,
+          "summary": "A certificate from Kyocera Document Solutions authorizing RAVECHI CARTRIDGE as a dealer, valid until March 31, 2026.",
+          "reasoning": "The page clearly states 'This is to certify that RAVECHI CARTRIDGE is an authorised Kyocera Dealer' and includes the Kyocera company name and validity period."
+        },
+        {
+          "start_page": 2,
+          "end_page": 2,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.7,
+          "summary": "A certificate from Hewlett-Packard India Sales Pvt. Ltd. authorizing a dealer for HP Original Supplies, valid for 12 months from April 1, 2025.",
+          "reasoning": "The page explicitly states 'This is to certify that M... HP Original Supplies' from Hewlett-Packard India Sales Pvt. Ltd. and provides the date of issue and validity period."
+        }
+      ]
+    },
+    "17599895243552.pdf": {
+      "document_type": "GEM_BID_COPY",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "GEM_BID_COPY",
+          "confidence": 0.2,
+          "summary": "This document is a copy of the bid submitted by Ravechi Cartridge for GeM Bid No. GEM/2025/B/6755890, detailing the items and quantities offered.",
+          "reasoning": "The page explicitly mentions 'BID NO. GEM/2025/B/6755890' and lists item descriptions, makes, and quantities, which are typical components of a bid submission document on the Government e-Marketplace (GeM) portal."
+        }
+      ]
+    },
+    "1759986907348.pdf": {
+      "document_type": "GST_CERTIFICATE",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 3 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 3,
+          "document_type": "GST_CERTIFICATE",
+          "confidence": 0.99,
+          "summary": "This segment contains the Goods and Services Tax Registration Certificate for SHAILESH PRAGJI RAVARIYA, including Annexure A and B detailing additional places of business and proprietor information.",
+          "reasoning": "Pages 1-3 clearly display 'Goods and Services Tax', 'Form GST REG-06', 'Registration Certificate', and its annexures, all bearing the same GSTIN and legal name, indicating a single unified GST registration document."
+        },
+        {
+          "start_page": 4,
+          "end_page": 4,
+          "document_type": "PAN_CARD",
+          "confidence": 0.2,
+          "summary": "This page presents the Permanent Account Number (PAN) card for SHAILESH PRAGJI RAVARIYA.",
+          "reasoning": "Page 4 explicitly states 'INCOME TAX DEPARTMENT', 'Permanent Account Number Card', and displays the PAN, name, father's name, and date of birth, which are all characteristic elements of a PAN card."
+        },
+        {
+          "start_page": 5,
+          "end_page": 6,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "This segment comprises a bank mandate form for electronic payments and associated bank account details for RAVECHI CARTRIDGE from Kotak Mahindra Bank.",
+          "reasoning": "Page 5 is clearly a 'MANDATE FORM' for 'ELECTRONIC CLEARING SERVICE' with account holder details, and page 6 provides specific bank details like IFSC, A/C No., and bank name, indicating it's a continuation or related part of the banking information for Ravechi Cartridge."
+        }
+      ]
+    },
+    "17599867656494.pdf": {
+      "document_type": "PURCHASE_ORDER",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 4 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 2,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "This segment contains a GeM Contract (No. GEMC-511687709668754) generated on 12-Aug-2024 for Container Corporation of India Limited, detailing buyer and consignee information.",
+          "reasoning": "Pages 1 and 2 clearly show the start of a GeM contract with a unique contract number, generated date, organisation details, buyer details, total order value, and consignee details, concluding with the standard system-generated note."
+        },
+        {
+          "start_page": 3,
+          "end_page": 5,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "This segment presents a distinct GeM Contract (No. GEMC-511687749581305) generated on 11-Oct-2023 for Intelligence Bureau, including product specifications for RC Paper Printing ink.",
+          "reasoning": "Page 3 begins a new GeM contract with a different contract number and generated date. Page 4 continues with product specifications for the item mentioned in the contract, and page 5 contains the standard system-generated note, indicating the end of this specific contract document."
+        },
+        {
+          "start_page": 6,
+          "end_page": 7,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "This segment details another GeM Contract (No. GEMC-511687784109590) generated on 31-Jan-2025 for Indian Air Force, including specifications for HP 79A OEM TONER CARTRIDGE.",
+          "reasoning": "Page 6 clearly marks the start of a new GeM contract with a unique contract number and generated date. Page 7 provides the product specifications for the item in this contract and concludes with the standard system-generated note, signifying the document's end."
+        },
+        {
+          "start_page": 8,
+          "end_page": 9,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "This segment contains a fourth GeM Contract (No. GEMC-511687793415635) generated on 02-Oct-2022 for Indian Navy, with product specifications for YASH COMPUTERS OEM Ribbon Cartridge.",
+          "reasoning": "Page 8 initiates a new GeM contract with a distinct contract number and generated date. Page 9 continues with the detailed product specifications for the ribbon cartridge and ends with the standard system-generated note, completing this contract document."
+        }
+      ]
+    },
+    "17599895203477.pdf": {
+      "document_type": "SELF_DECLARATION",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 5 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 6,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A collection of tender-specific self-declarations including Bid Security, Bank Details, Blacklisting, MII Local Content, and Financial Standing.",
+          "reasoning": "Pages 1 to 6 consist of various standard tender undertakings and declarations printed on the bidder's letterhead (Ravechi Cartridge) addressed to Indian Oil Corporation Ltd."
+        },
+        {
+          "start_page": 7,
+          "end_page": 9,
+          "document_type": "GST_CERTIFICATE",
+          "confidence": 0.99,
+          "summary": "GST Registration Certificate (Form GST REG-06) with Annexures A and B for Ravechi Cartridge.",
+          "reasoning": "Contains the official Form GST REG-06 issued by the Government of India, along with Annexures A and B showing proprietor details."
+        },
+        {
+          "start_page": 10,
+          "end_page": 10,
+          "document_type": "PAN_CARD",
+          "confidence": 0.2,
+          "summary": "Permanent Account Number (PAN) card of Shailesh Pragji Ravariya.",
+          "reasoning": "Displays the Income Tax Department, Government of India PAN card layout with the PAN number AQDPR3764M."
+        },
+        {
+          "start_page": 11,
+          "end_page": 12,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "Warranty Certificate and Blacklist Declaration on the bidder's letterhead.",
+          "reasoning": "Contains a self-certified warranty certificate (page 11) and an additional blacklist declaration (page 12) issued by Ravechi Cartridge."
+        },
+        {
+          "start_page": 13,
+          "end_page": 13,
+          "document_type": "ISO_CERTIFICATE",
+          "confidence": 0.2,
+          "summary": "Quality Management System Certificate issued to Ravechi Cartridge by UK Certification and Assessment Ltd.",
+          "reasoning": "It is an ISO Quality Management System certificate valid until February 2026."
+        }
+      ]
+    },
+    "17599869606242.pdf": {
+      "document_type": "SELF_DECLARATION",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "Warranty Certificate issued by Ravechi Cartridge guaranteeing the supplied goods/services for a one-year period.",
+          "reasoning": "The document is a signed Warranty Certificate from Ravechi Cartridge declaring a one-year guarantee/warranty for supplied goods, which functions as a self-declaration/undertaking."
+        }
+      ]
+    }
+  },
+  "ALANKAR DISTRIBUTORS": {
+    "17622443375055.pdf": {
+      "document_type": "BOQ_COMPLIANCE",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "BOQ_COMPLIANCE",
+          "confidence": 0.2,
+          "summary": "A declaration from Alankar Distributors confirming complete compliance with the technical specifications and quantities mentioned in the Bill of Quantities (BoQ) bid.",
+          "reasoning": "The page explicitly states 'Compliance of BoQ specification and supporting document' and contains a signed declaration of compliance with the technical specifications and quantities of the BoQ bid, along with company details and stamp."
+        }
+      ]
+    },
+    "17622443018047.pdf": {
+      "document_type": "MAF_OEM_AUTH",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 3,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.99,
+          "summary": "An authorization letter from HP India Sales Private Limited to Indian Oil Corporation Limited, confirming the authenticity and supply process of HP ink and toner cartridges for a GeM tender.",
+          "reasoning": "Page 1 explicitly states 'Authorization letter from Manufacturer of Equipment' and includes a MAF Number. Pages 2 and 3 continue this letter, sharing the same sender, recipient, date, and MAF reference, with internal page numbering 'Page 1 of 2' and 'Page 2 of 2' respectively, discussing assurance of originality and authenticity of HP consumables for the specified GeM bid."
+        }
+      ]
+    },
+    "17622443331396.pdf": {
+      "document_type": "UDYAM_MSME",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "UDYAM_MSME",
+          "confidence": 0.99,
+          "summary": "This document is an Udyam Registration Certificate for M/S ALANKAR DISTRIBUTORS with UDYAM Registration Number UDYAM-DL-01-0001582.",
+          "reasoning": "The snippet explicitly states 'Udyam Registration Certificate', includes the 'UDYAM REGISTRATION NUMBER', and shows the official Udyam registration portal URL, confirming its identity as an Udyam MSME document."
+        }
+      ]
+    },
+    "17622442104199.pdf": {
+      "document_type": "SELF_DECLARATION",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 4 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 3,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "This segment contains multiple declarations by Alankar Distributors regarding NCLT/blacklisting status, and their status as manufacturer/authorized channel partner.",
+          "reasoning": "Pages 1 and 2 explicitly mention 'DECLARATION ON NCLT / NCLAT /DRT /DRAT/ COURT RECETVERSHTP/ L|QU|DAT|ON' and 'blackList or hotiday List'. Page 3 continues with declarations about 'Whether Manufacturer or Authorized Channel Partner/Distributor' and relationships with IOCL directors. These are all self-declarations from the bidder."
+        },
+        {
+          "start_page": 4,
+          "end_page": 4,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "This page provides details of a past purchase order (GEMC-5116877) issued by the Controller General of Defence Accounts, serving as proof of execution.",
+          "reasoning": "The page contains a table with columns like 'Purchase Order No. and Date' and 'PO ISSUED BY (client name)', along with a specific PO number and client. It also mentions 'invoices...have been executed', which are typical elements of an execution proof document."
+        },
+        {
+          "start_page": 5,
+          "end_page": 5,
+          "document_type": "BID_SECURITY",
+          "confidence": 0.7,
+          "summary": "This document is a formal Bid Security Declaration submitted by Alankar Distributors in lieu of Earnest Money Deposit.",
+          "reasoning": "The document is explicitly titled 'Format of Bid Security Declaration from bidders in lieu of Earnest Money Deposit / Bid Security ( On Bidders' Letter Head)' and contains the standard declaration text for bid security."
+        },
+        {
+          "start_page": 6,
+          "end_page": 6,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "This page contains an undertaking by the bidder (Tarun Gupta) related to preference and reservation, specifically concerning local content.",
+          "reasoning": "The page is titled 'UNDERTAKING ( to be submitted on Companv's Letterhead)Proforma -1' and mentions 'Proforma related to tVlll (preference and reservation )' and '5O% Local Content'', clearly indicating a specific self-declaration or undertaking."
+        }
+      ]
+    },
+    "17622443272341.pdf": {
+      "document_type": "SELF_DECLARATION",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A self-declaration by Alankar Distributors certifying that the firm is not under liquidation, court receivership, or bankrupt.",
+          "reasoning": "The page contains a formal declaration from Alankar Distributors stating their firm's legal and financial solvency, addressed 'TO WHOM SO EVER IT MAY CONCERN' and signed by an authorized signatory."
+        }
+      ]
+    },
+    "17622431242265.pdf": {
+      "document_type": "ATC_ACCEPTANCE",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "ATC_ACCEPTANCE",
+          "confidence": 0.2,
+          "summary": "A certificate from Alankar Distributors confirming their acceptance of all terms and conditions of the bid.",
+          "reasoning": "The document is explicitly titled 'ATC Certificate' and contains a clear statement from the bidder, Alankar Distributors, accepting all terms and conditions of the bid."
+        }
+      ]
+    },
+    "17622431160461.pdf": {
+      "document_type": "PURCHASE_ORDER",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 6 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 7,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract No. GEMC-511687706010310 detailing product specifications and delivery dates for various toner cartridges.",
+          "reasoning": "Pages 1-7 contain clear GeM contract headers, organization details, extensive product listings with quantities and prices, and a delivery schedule, indicating a complete GeM Purchase Order."
+        },
+        {
+          "start_page": 8,
+          "end_page": 13,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract No. GEMC-511687732609862 detailing product specifications and delivery dates for various cartridges.",
+          "reasoning": "Pages 8-13 present a new GeM contract with distinct contract number, generated date, organization details, product listings, and delivery schedule, clearly segmenting it as a separate Purchase Order."
+        },
+        {
+          "start_page": 14,
+          "end_page": 20,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract No. GEMC-511687732777771 detailing product specifications and total order value for various OEM toner cartridges.",
+          "reasoning": "Pages 14-20 contain another distinct GeM contract with its own contract number, generated date, organization details, detailed product specifications, and a total order value, confirming it as a separate Purchase Order."
+        },
+        {
+          "start_page": 21,
+          "end_page": 25,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract No. GEMC-511687771151409 detailing product specifications and delivery dates for various toner and ink cartridges.",
+          "reasoning": "Pages 21-25 clearly outline a new GeM contract with a unique contract number, generated date, organization details, product listings, and delivery schedule, identifying it as another Purchase Order."
+        },
+        {
+          "start_page": 26,
+          "end_page": 30,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract No. GEMC-511687731854057 detailing product specifications and delivery dates for various OEM toner cartridges.",
+          "reasoning": "Pages 26-30 present a fifth distinct GeM contract, identifiable by its unique contract number, generated date, organization details, product descriptions, and delivery schedule, confirming it as a separate Purchase Order."
+        },
+        {
+          "start_page": 31,
+          "end_page": 33,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract No. GEMC-511687778717530 detailing product specifications and delivery dates for various OEM toner cartridges.",
+          "reasoning": "Pages 31-33 contain the final distinct GeM contract in the document, marked by its own contract number, generated date, organization details, product listings, and delivery schedule, thus completing the segmentation."
+        }
+      ]
+    }
+  },
+  "ARMS PERIPHERALS": {
+    "17613945930495.pdf": {
+      "document_type": "ATC_ACCEPTANCE",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 8 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "ATC_ACCEPTANCE",
+          "confidence": 0.2,
+          "summary": "A letter from ARMS PERIPHERALS confirming the acceptance of all terms and conditions of the bid.",
+          "reasoning": "The page explicitly states 'TO WHOMSOEVER IT MAY CONCERN' and contains a clear declaration from ARMS PERIPHERALS that 'All the terms and condition of the Bid is accepted,' signed by the proprietor."
+        },
+        {
+          "start_page": 2,
+          "end_page": 3,
+          "document_type": "UDYAM_MSME",
+          "confidence": 0.652,
+          "summary": "The Udyam Registration Certificate for ARMS PERIPHERALS, showing its MSME classification as 'Small' and detailing NIC codes.",
+          "reasoning": "Pages 2 and 3 explicitly state 'UDYAM REGISTRATION CERTIFICATE' with page numbering '1/2' and '2/2', and contain the Udyam Registration Number, enterprise name, type, and NIC codes."
+        },
+        {
+          "start_page": 4,
+          "end_page": 4,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "A certificate for ARMS PERIPHERALS detailing its registration for 'SUPPLIES & INSTALLATION OF COMPUTER PERIPHERALS & SOFTWARE' with issuance and expiry dates.",
+          "reasoning": "The page presents a certificate with a certificate number, initial registration date, issuance date, and expiry date, specifically for the business scope of 'SUPPLIES & INSTALLATION OF COMPUTER PERIPHERALS & SOFTWARE'. It does not fit other specific document types."
+        },
+        {
+          "start_page": 5,
+          "end_page": 5,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "A page containing only an image, with no extractable text to determine its content or purpose.",
+          "reasoning": "The snippet explicitly shows an HTML structure indicating an image without any accompanying text, making its content and relation to other documents unidentifiable."
+        },
+        {
+          "start_page": 6,
+          "end_page": 8,
+          "document_type": "GST_CERTIFICATE",
+          "confidence": 0.7,
+          "summary": "The GST Registration Certificate for ARMS PERIPHERALS (Proprietorship of Aditya Mishra), including Annexure A for additional places of business and Annexure B for proprietor details.",
+          "reasoning": "Page 6 is clearly identified as 'Form GST REG-06 Registration Certificate' with a GSTIN. Pages 7 and 8 are labeled 'Annexure A' and 'Annexure B' respectively, providing supplementary details for the same GSTIN and legal entity."
+        },
+        {
+          "start_page": 9,
+          "end_page": 10,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "A bank mandate form from ARMS PERIPHERALS for NEFT/RTGS transfers, including vendor and HDFC Bank details.",
+          "reasoning": "Page 9 is explicitly titled 'Mandate Form for the transfer amount through NEFT/RTGS' and includes vendor and bank details. Page 10 continues with HDFC Bank details and a format resembling a payment instruction, directly related to the mandate."
+        },
+        {
+          "start_page": 11,
+          "end_page": 13,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.2,
+          "summary": "An official HP India Sales Private Limited warranty statement for HP LaserJet supplies, detailing warranty terms, exclusions, duration, and contact information for the Business Manager.",
+          "reasoning": "Pages 11 and 12 clearly present an 'HP Limited Warranty Statement' from HP India Sales Private Limited, detailing warranty terms and signed by an HP official. Page 13 provides additional contact information from the same HP entity and signatory, reinforcing it as an official OEM communication."
+        },
+        {
+          "start_page": 14,
+          "end_page": 14,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A self-declaration from ARMS PERIPHERALS certifying that the organization is not blacklisted or under liquidation, digitally signed by the proprietor.",
+          "reasoning": "The page explicitly states 'TO WHOM SO EVER IT MAY CONCERN' and contains a clear declaration from ARMS PERIPHERALS about its status (not blacklisted, not under liquidation), signed and digitally verified by the proprietor."
+        }
+      ]
+    },
+    "17622555476238.pdf": {
+      "document_type": "OTHER",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 2 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "This page could not be processed due to OCR failure, preventing any content analysis.",
+          "reasoning": "The page content was unreadable due to OCR failure, and it is not identified as part of the subsequent two-page document."
+        },
+        {
+          "start_page": 2,
+          "end_page": 3,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.99,
+          "summary": "A two-page letter from HP India Sales Private Limited confirming the authenticity and supply process of HP ink and toner cartridges for a GeM bid/tender.",
+          "reasoning": "Page 2 is explicitly labeled 'Page 1 of 2' from HP India Sales Private Limited, addressed to Indian Oil Corporation Ltd, discussing assurance of originality for HP consumables. Page 3 is labeled 'Page 2 of 2' and concludes the letter, specifically mentioning 'authenticity and supply process of HP ink and toner cartridges under the subjected GeM bid / Tender' and is signed by an HP Regional Manager."
+        }
+      ]
+    },
+    "17613945034181.pdf": {
+      "document_type": "BOQ_COMPLIANCE",
+      "confidence": 0.7,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "BOQ_COMPLIANCE",
+          "confidence": 0.7,
+          "summary": "A self-declaration from ARMS PERIPHERALS certifying that the submitted Bill of Quantities (BOQ) is exactly as per the bid's requirements with no deviations.",
+          "reasoning": "The document explicitly states 'We hereby certify that the BOQ (Bill of Quantities) offered against this bid is exactly as per the BOQ desired in the bid. There is no deviation.', clearly indicating its purpose as a BOQ compliance declaration."
+        }
+      ]
+    },
+    "17613944812136.pdf": {
+      "document_type": "PURCHASE_ORDER",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 8 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A self-certification document from Arms Peripherals, declaring fulfillment of commercial experience criteria and referencing a Purchase Order and two invoices.",
+          "reasoning": "The page explicitly states 'SELF CERTIFICATION' and contains a formal declaration by the bidder, including digital signature details."
+        },
+        {
+          "start_page": 2,
+          "end_page": 3,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.2,
+          "summary": "A GeM Contract (Purchase Order) No. GEMC-511687712377171 issued by Indian Oil Corporation Limited for the supply of HP OEM Toner Cartridges.",
+          "reasoning": "These pages contain clear headings like '\u0905\u0928\u0941\u092c\u0902\u0927|Contract', 'Contract No', 'Organisation Details', 'Total Order Value', 'Consignee Detail', and item specifications, which are characteristic of a GeM Purchase Order."
+        },
+        {
+          "start_page": 4,
+          "end_page": 5,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Two Consignee Receipt & Acceptance Certificates (CRACs) for partial deliveries against Contract No. GEMC-511687712377171.",
+          "reasoning": "Both pages are clearly labeled 'Consignee Receipt & Acceptance Certificate' (CRAC) and detail received order values, serving as proof of delivery and acceptance for the contract."
+        },
+        {
+          "start_page": 6,
+          "end_page": 6,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "A delivery challan or consignment note from PGC LOGISTICO detailing goods delivered to Indian Oil Corporation Ltd.",
+          "reasoning": "The page contains fields such as 'Consignor's Name & Address', 'Consignee Name & Address', 'Description of Goods', 'Challan No.', 'Goods Weight', and 'No. of Packet', which are typical of a delivery challan or consignment note, indicating proof of execution."
+        },
+        {
+          "start_page": 7,
+          "end_page": 7,
+          "document_type": "INVOICE",
+          "confidence": 0.99,
+          "summary": "An e-Invoice (Tax Invoice) No. ARMS24250920 from Arms Peripherals, dated 9-Dec-24, for the recipient.",
+          "reasoning": "The page is explicitly titled 'TAX INVOICE (ORIGINAL FOR RECIPIENT)' and 'e-Invoice', includes an IRN, Ack No., and Invoice No. ARMS24250920, confirming it as an invoice."
+        },
+        {
+          "start_page": 8,
+          "end_page": 9,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "A delivery challan or consignment note detailing goods, weight, and logistics charges, likely related to a delivery.",
+          "reasoning": "Page 9 contains a markdown table with 'Description of Goods', 'Challan No.', 'Goods Weight', 'No. of Packet', 'Value of Goods', and logistics charges, consistent with a delivery challan. Page 8 is OCR failed but is immediately preceding this content, suggesting it's either a blank page or an unreadable part of the same delivery document."
+        },
+        {
+          "start_page": 10,
+          "end_page": 10,
+          "document_type": "INVOICE",
+          "confidence": 0.99,
+          "summary": "An e-Invoice (Tax Invoice) from Arms Peripherals, dated 9-Dec-24, for the recipient.",
+          "reasoning": "The page is clearly labeled 'TAX INVOICE (ORIGINAL FOR RECIPIENT)' and 'e-Invoice', includes an IRN, Ack No., Ack Date, and company details, confirming it as an invoice."
+        },
+        {
+          "start_page": 11,
+          "end_page": 11,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "An unreadable page at the end of the document, likely a blank page or an unidentifiable document.",
+          "reasoning": "The OCR failed for this page, and its content cannot be determined. Given its position at the end and the distinct nature of preceding documents, it is classified as 'OTHER'."
+        }
+      ]
+    },
+    "17613948232678.pdf": {
+      "document_type": "BID_SECURITY",
+      "confidence": 0.7,
+      "reasoning": "Segmented into 6 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "BID_SECURITY",
+          "confidence": 0.7,
+          "summary": "A Bid Security Declaration from ARMS PERIPHERALS for Tender No: GEM/2025/B/6755890, submitted in lieu of Earnest Money Deposit.",
+          "reasoning": "The page explicitly states 'Format of Bid Security Declaration from bidders in lieu of Earnest Money Deposit / Bid Security'."
+        },
+        {
+          "start_page": 2,
+          "end_page": 2,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A self-certification from ARMS PERIPHERALS confirming commercial experience based on PO no. GEMC-511687712377171 and related invoices.",
+          "reasoning": "The page contains a 'Format for self-certification on letter head of bidder for fulfilling commercial experience criteria' and is titled 'SELF CERTIFICATION'."
+        },
+        {
+          "start_page": 3,
+          "end_page": 3,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A declaration from ARMS PERIPHERALS confirming whether any of its directors are relatives of IOCL directors or have other specified affiliations with IOCL.",
+          "reasoning": "The page details a declaration required from bidders regarding relationships with IOCL directors."
+        },
+        {
+          "start_page": 4,
+          "end_page": 4,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A declaration from ARMS PERIPHERALS stating that it has not been blacklisted or holiday listed.",
+          "reasoning": "The page explicitly mentions 'PROFORMA OF DECLARATION OF BLACKLISTING / HOLIDAY LISTING'."
+        },
+        {
+          "start_page": 5,
+          "end_page": 5,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A declaration from ARMS PERIPHERALS regarding its status concerning NCLT, NCLAT, DRT, DRAT, Court Receivership, or Liquidation for Tender No: GEM/2025/B/6755890.",
+          "reasoning": "The page explicitly states 'DECLARATION ON NCLT / NCLAT /DRT /DRAT/ COURT RECEIVERSHIP/ LIQUIDATION'."
+        },
+        {
+          "start_page": 6,
+          "end_page": 6,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "An undertaking from ARMS PERIPHERALS related to MII (Make in India) preference and reservation.",
+          "reasoning": "The page mentions 'Proforma related to MII (preference and reservation)' and is titled 'UNDERTAKING'."
+        }
+      ]
+    },
+    "17613946716768.pdf": {
+      "document_type": "OTHER",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 5 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 3,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "This segment contains the Audited Financial Statements (Profit & Loss Account and Balance Sheet) for Arms Peripherals for the financial year ending 31 March 2025.",
+          "reasoning": "Pages 1 and 2 detail revenue, expenses, and finance costs, while page 3 presents the Balance Sheet, all dated for 31 March 2025 and bearing consistent UDINs and auditor signatures."
+        },
+        {
+          "start_page": 4,
+          "end_page": 5,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "This segment contains the Audited Financial Statements (Balance Sheet and Trading/Profit & Loss Account) for Arms Peripherals for the financial year ending 31 March 2024.",
+          "reasoning": "Page 4 is explicitly titled 'Balance Sheet as on 31st March, 2024', and page 5 details the Trading/Profit & Loss account, both sharing the same UDIN and auditor details for the 2024 financial year."
+        },
+        {
+          "start_page": 6,
+          "end_page": 7,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "This segment contains the Audited Financial Statements (Trading/Profit & Loss Account and Balance Sheet) for Arms Peripherals for the financial year ending 31 March 2023.",
+          "reasoning": "Page 6 presents the Trading/Profit & Loss account, and page 7 is explicitly titled 'Balance Sheet as on 31st March, 2023', with both pages bearing similar UDINs and auditor details for the 2023 financial year."
+        },
+        {
+          "start_page": 8,
+          "end_page": 9,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "This segment contains the Audited Financial Statements (Balance Sheet and Trading/Profit & Loss Account) for Arms Peripherals for the financial year ending 31 March 2022.",
+          "reasoning": "Page 8 is explicitly titled 'Balance Sheet as on 31st March, 2022', and page 9 details the Trading/Profit & Loss account, both sharing similar UDINs and auditor details for the 2022 financial year."
+        },
+        {
+          "start_page": 10,
+          "end_page": 10,
+          "document_type": "TURNOVER_CERT",
+          "confidence": 0.99,
+          "summary": "This page is a turnover certificate issued by A H P N & ASSOCIATES, Chartered Accountants, certifying the turnover of M/s ARMS PERIPHERALS for the last four years.",
+          "reasoning": "The document is explicitly titled 'TO WHOMSOEVER IT MAY CONCERN' and states its purpose is to 'certify that the turnover... for last four years of M/s ARMS PERIPHERALS', issued by a Chartered Accountant firm with a distinct UDIN."
+        }
+      ]
+    },
+    "17613946506507.pdf": {
+      "document_type": "OTHER",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 2 logical document(s) via Gemini (gemini-2.5-flash).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "A government notification from the Ministry of Finance regarding restrictions on public procurement from certain countries.",
+          "reasoning": "The page contains text from a government press release or order, specifically mentioning 'Restrictions on Public Procurement from certain countries' and 'General Financial Rules 2017'."
+        },
+        {
+          "start_page": 2,
+          "end_page": 2,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.7,
+          "summary": "A digital signature block for Aditya Mishra of ARMS PERIPHERALS.",
+          "reasoning": "The page exclusively displays a detailed digital signature block, which is typically used to authenticate a self-declaration, undertaking, or other signed document submitted by a bidder."
+        }
+      ]
+    }
+  },
+  "HEAMONS SYSTEMS": {
+    "1762247219885.pdf": {
+      "document_type": "SELF_DECLARATION",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.2,
+          "summary": "A self-declaration letter from Heamons Systems confirming that the quoted product is original, genuine, and sourced from the OEM.",
+          "reasoning": "The document is a signed declaration by the bidder (Heamons Systems) addressed to the buyer, certifying the authenticity and OEM sourcing of the product for GeM bid GEM/2025/B/6755890."
+        }
+      ]
+    },
+    "17622461553766.pdf": {
+      "document_type": "TURNOVER_CERT",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 2 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "TURNOVER_CERT",
+          "confidence": 0.99,
+          "summary": "Turnover certificate issued by Tripti Bhardwaj & Associates for the financial year 2023-2024.",
+          "reasoning": "The page contains a 'To Whom It May Concern' certificate issued by a Chartered Accountant with UDIN and FRN, certifying financial figures for the period 1st April 2023 to 31st March 2024."
+        },
+        {
+          "start_page": 2,
+          "end_page": 4,
+          "document_type": "TURNOVER_CERT",
+          "confidence": 0.99,
+          "summary": "Financial certificate and audited statements of HP India Sales Private Limited certified by Balu & Anand Chartered Accountants.",
+          "reasoning": "Page 2 is a CA certificate verifying the audited financial statements of HP India Sales Private Limited. Pages 3 and 4 are grouped here as they likely represent the continuation or annexures of this financial certificate, despite OCR failure."
+        }
+      ]
+    },
+    "17622461672898.pdf": {
+      "document_type": "MAF_OEM_AUTH",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 2,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.99,
+          "summary": "OEM authenticity and supply process clarification letter from HP India Sales Private Limited to Indian Oil Corporation Ltd for a GeM bid.",
+          "reasoning": "The document is a continuous two-page letter from HP (the OEM) addressing the buyer regarding the authenticity, originality assurance, and supply process of HP ink and toner cartridges under the specified GeM tender."
+        }
+      ]
+    },
+    "17622499231073.pdf": {
+      "document_type": "PURCHASE_ORDER",
+      "confidence": 0.729,
+      "reasoning": "Segmented into 20 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 2,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.729,
+          "summary": "GeM Contract No. GEMC-511687703758674 (Part 1) issued by Northern Railway.",
+          "reasoning": "Contains standard GeM contract headers, contract number, and organization details for Northern Railway."
+        },
+        {
+          "start_page": 3,
+          "end_page": 3,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) for Contract No. GEMC-511687703758674.",
+          "reasoning": "Explicitly titled Consignee Receipt & Acceptance Certificate with matching contract details."
+        },
+        {
+          "start_page": 4,
+          "end_page": 6,
+          "document_type": "INVOICE",
+          "confidence": 0.531,
+          "summary": "GST Invoice Cum Challan (Pages 1-3) issued by Heamons Systems to Northern Railway.",
+          "reasoning": "Contains GST invoice headers, IRN, Ack No, and billing details from Heamons Systems."
+        },
+        {
+          "start_page": 7,
+          "end_page": 7,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "Scanned image page with no readable text.",
+          "reasoning": "Contains only an HTML image placeholder indicating a scanned document page."
+        },
+        {
+          "start_page": 8,
+          "end_page": 10,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.729,
+          "summary": "GeM Contract No. GEMC-511687703758674 (Part 2) containing product specifications and terms.",
+          "reasoning": "Contains product specifications for HP toner cartridges and standard GeM contract delivery terms."
+        },
+        {
+          "start_page": 11,
+          "end_page": 12,
+          "document_type": "INVOICE",
+          "confidence": 0.531,
+          "summary": "GST Invoice continuation containing tax details and declarations.",
+          "reasoning": "Contains tax rate breakdown (CGST/SGST) and standard invoice declarations matching the HP toner cartridge order."
+        },
+        {
+          "start_page": 13,
+          "end_page": 13,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) for Contract No. GEMC-511687756260137.",
+          "reasoning": "Explicitly titled Consignee Receipt & Acceptance Certificate for Delhi Transport Corporation."
+        },
+        {
+          "start_page": 14,
+          "end_page": 15,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.729,
+          "summary": "GeM Contract No. GEMC-511687778503573 issued by Rajya Sabha Secretariat.",
+          "reasoning": "Contains standard GeM contract headers, contract number, and organization details for Rajya Sabha Secretariat."
+        },
+        {
+          "start_page": 16,
+          "end_page": 16,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) for Contract No. GEMC-511687778503573.",
+          "reasoning": "Explicitly titled Consignee Receipt & Acceptance Certificate with matching contract details."
+        },
+        {
+          "start_page": 17,
+          "end_page": 19,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.729,
+          "summary": "GeM Contract No. GEMC-511687764879791 issued by All India Institute of Medical Sciences (AIIMS).",
+          "reasoning": "Contains standard GeM contract headers, contract number, and organization details for AIIMS."
+        },
+        {
+          "start_page": 20,
+          "end_page": 20,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) for Contract No. GEMC-511687764879791.",
+          "reasoning": "Explicitly titled Consignee Receipt & Acceptance Certificate with matching contract details."
+        },
+        {
+          "start_page": 21,
+          "end_page": 22,
+          "document_type": "INVOICE",
+          "confidence": 0.531,
+          "summary": "GST Invoice Cum Challan issued by Heamons Systems to AIIMS for Contract No. GEMC-511687764879791.",
+          "reasoning": "Contains GST invoice headers, IRN, Ack No, and billing details from Heamons Systems to AIIMS."
+        },
+        {
+          "start_page": 23,
+          "end_page": 24,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.729,
+          "summary": "GeM Contract No. GEMC-511687713558176 issued by All India Institute of Medical Sciences (AIIMS).",
+          "reasoning": "Contains standard GeM contract headers, contract number, and organization details for AIIMS."
+        },
+        {
+          "start_page": 25,
+          "end_page": 25,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) for Contract No. GEMC-511687713558176.",
+          "reasoning": "Explicitly titled Consignee Receipt & Acceptance Certificate with matching contract details."
+        },
+        {
+          "start_page": 26,
+          "end_page": 27,
+          "document_type": "INVOICE",
+          "confidence": 0.531,
+          "summary": "GST Invoice Cum Challan issued by Heamons Systems to AIIMS for Contract No. GEMC-511687713558176.",
+          "reasoning": "Contains GST invoice headers, IRN, Ack No, and billing details from Heamons Systems to AIIMS."
+        },
+        {
+          "start_page": 28,
+          "end_page": 29,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.729,
+          "summary": "GeM Contract No. GEMC-511687729623093 issued by Employees State Insurance Corporation (ESIC).",
+          "reasoning": "Contains standard GeM contract headers, contract number, and organization details for ESIC."
+        },
+        {
+          "start_page": 30,
+          "end_page": 30,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) for Contract No. GEMC-511687729623093.",
+          "reasoning": "Explicitly titled Consignee Receipt & Acceptance Certificate with matching contract details."
+        },
+        {
+          "start_page": 31,
+          "end_page": 33,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.729,
+          "summary": "GeM Contract No. GEMC-511687723922062 issued by National Mission for Clean Ganga.",
+          "reasoning": "Contains standard GeM contract headers, contract number, and organization details for National Mission for Clean Ganga."
+        },
+        {
+          "start_page": 34,
+          "end_page": 35,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.729,
+          "summary": "GeM Contract No. GEMC-511687783633878 issued by Employees State Insurance Corporation (ESIC).",
+          "reasoning": "Contains standard GeM contract headers, contract number, and organization details for ESIC."
+        },
+        {
+          "start_page": 36,
+          "end_page": 36,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) for Contract No. GEMC-511687783633878.",
+          "reasoning": "Explicitly titled Consignee Receipt & Acceptance Certificate with matching contract details."
+        }
+      ]
+    },
+    "17622499307188.pdf": {
+      "document_type": "ATC_ACCEPTANCE",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 8 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "ATC_ACCEPTANCE",
+          "confidence": 0.2,
+          "summary": "Bidder's cover letter accepting all terms and conditions of the GeM bid and certifying OEM support.",
+          "reasoning": "The page contains a formal declaration accepting all terms and conditions of the bid and confirming product support by HP Sales India."
+        },
+        {
+          "start_page": 2,
+          "end_page": 2,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.99,
+          "summary": "Self-declaration certifying that the bidder is not under liquidation, court receivership, or bankrupt.",
+          "reasoning": "A standalone 'To Whomsoever It May Concern' letter certifying the bidder's financial and legal status regarding liquidation."
+        },
+        {
+          "start_page": 3,
+          "end_page": 3,
+          "document_type": "BID_SECURITY",
+          "confidence": 0.2,
+          "summary": "Bid Security Declaration in lieu of Earnest Money Deposit for Tender GEM/2025/B/6755890.",
+          "reasoning": "Explicitly titled as 'Format of Bid Security Declaration from bidders in lieu of Earnest Money Deposit' with the specific tender number."
+        },
+        {
+          "start_page": 4,
+          "end_page": 5,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Self-certification of commercial experience and execution of past purchase orders.",
+          "reasoning": "Contains a table of past purchase orders (AIIMS, etc.) and a signed self-certification confirming the successful execution of these supplies."
+        },
+        {
+          "start_page": 6,
+          "end_page": 6,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.99,
+          "summary": "Declaration regarding relationship of the bidder's directors with IOCL directors.",
+          "reasoning": "A standard tender proforma asking the bidder to declare any relationship with IOCL directors."
+        },
+        {
+          "start_page": 7,
+          "end_page": 8,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.99,
+          "summary": "Proforma declaration of blacklisting or holiday listing by IOCL or MoPNG.",
+          "reasoning": "Spans pages 7 and 8, containing the formal declaration of non-blacklisting signed by Hema Goel Gambhir."
+        },
+        {
+          "start_page": 9,
+          "end_page": 9,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.99,
+          "summary": "Declaration on NCLT, NCLAT, DRT, DRAT, court receivership, or liquidation.",
+          "reasoning": "A specific tender format declaration regarding insolvency resolution proceedings under NCLT/DRT."
+        },
+        {
+          "start_page": 10,
+          "end_page": 10,
+          "document_type": "SELF_DECLARATION",
+          "confidence": 0.99,
+          "summary": "Make in India (MII) local content preference undertaking.",
+          "reasoning": "An undertaking proforma related to MII local content preference signed by the proprietor."
+        }
+      ]
+    },
+    "17622472742651.pdf": {
+      "document_type": "MAF_OEM_AUTH",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.99,
+          "summary": "Manufacturer Authorization Letter from HP India Sales Private Limited for Tender GEM/2025/B/6755890.",
+          "reasoning": "The document is explicitly titled 'Authorization letter from Manufacturer of Equipment' and contains the MAF number, tender reference, and signature of the HP authorized signatory."
+        }
+      ]
+    },
+    "17622461631536.pdf": {
+      "document_type": "MAF_OEM_AUTH",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Ollama (llama3:8b).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.99,
+          "summary": "Authorization letter for HP India Sales Private Limited.",
+          "reasoning": "Contains MAF number, authorized signatory details, and email ID."
+        }
+      ]
+    }
+  },
+  "LUXMI ENTERPRISES": {
+    "17613956723079.pdf": {
+      "document_type": "OTHER",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 1 logical document(s) via Ollama (llama3:8b).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "OTHER",
+          "confidence": 0.2,
+          "summary": "Company introduction and contact information.",
+          "reasoning": "Contains company name, address, phone numbers, email, and product offerings."
+        }
+      ]
+    },
+    "17613955610157.pdf": {
+      "document_type": "UDYAM_MSME",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 2 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "UDYAM_MSME",
+          "confidence": 0.99,
+          "summary": "Udyam Registration Certificate for M/S Luxmi Enterprises with registration number UDYAM-CH-01-0017116.",
+          "reasoning": "The page contains a complete 1-page Udyam Registration Certificate issued by the Ministry of MSME."
+        },
+        {
+          "start_page": 2,
+          "end_page": 2,
+          "document_type": "UDYAM_MSME",
+          "confidence": 0.99,
+          "summary": "Udyog Aadhaar Registration Certificate for Luxmi Enterprises with registration number CH01D0003426.",
+          "reasoning": "The page contains a distinct Udyog Aadhaar Registration Certificate, which is an older form of MSME registration."
+        }
+      ]
+    },
+    "1761395552135.pdf": {
+      "document_type": "MAF_OEM_AUTH",
+      "confidence": 0.7,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 6,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.7,
+          "summary": "OEM Service Partner List and Authorization letter from HP India Sales Private Limited, signed by the Enterprise Account Manager.",
+          "reasoning": "The document spans pages 1 to 6, featuring a consistent HP India Sales Pvt. Ltd. header on all pages, listing authorized service centers across India, and concluding with a signature from an HP Enterprise Account Manager on page 6."
+        }
+      ]
+    },
+    "17613954394403.pdf": {
+      "document_type": "PURCHASE_ORDER",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 16 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": true,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 3,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract Agreement No. GEMC-511687797893122 for the supply of HP OEM Toner Cartridges to SPIC Chandigarh.",
+          "reasoning": "Contains standard GeM contract details, organization details, item specifications, and terms for contract GEMC-511687797893122."
+        },
+        {
+          "start_page": 4,
+          "end_page": 4,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) No. GEMCRAC-1-511687797893122-1 for SPIC Chandigarh.",
+          "reasoning": "This page is a system-generated CRAC confirming receipt and acceptance of goods under contract GEMC-511687797893122."
+        },
+        {
+          "start_page": 5,
+          "end_page": 7,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract Agreement No. GEMC-511687773947804 for the supply of HP OEM Toner Cartridges to Border Roads Organisation.",
+          "reasoning": "Contains standard GeM contract details, organization details, item specifications, and terms for contract GEMC-511687773947804."
+        },
+        {
+          "start_page": 8,
+          "end_page": 8,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) No. GEMCRAC-1-511687773947804-1 for Border Roads Organisation.",
+          "reasoning": "This page is a system-generated CRAC confirming receipt and acceptance of goods under contract GEMC-511687773947804."
+        },
+        {
+          "start_page": 9,
+          "end_page": 10,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract Agreement No. GEMC-511687735789191 for the supply of HP LaserJet Toner Cartridges to CSIR-IHBT.",
+          "reasoning": "Contains standard GeM contract details, organization details, item specifications, and terms for contract GEMC-511687735789191."
+        },
+        {
+          "start_page": 11,
+          "end_page": 11,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) No. GEMCRAC-1-511687735789191-1 for CSIR-IHBT.",
+          "reasoning": "This page is a system-generated CRAC confirming receipt and acceptance of goods under contract GEMC-511687735789191."
+        },
+        {
+          "start_page": 12,
+          "end_page": 14,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract Agreement No. GEMC-511687718050783 for the supply of HP 88A Black Original LaserJet Toner Cartridges to the Indian Army.",
+          "reasoning": "Contains standard GeM contract details, organization details, item specifications, and terms for contract GEMC-511687718050783."
+        },
+        {
+          "start_page": 15,
+          "end_page": 15,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) No. GEMCRAC-1-511687718050783-1 for the Indian Army.",
+          "reasoning": "This page is a system-generated CRAC confirming receipt and acceptance of goods under contract GEMC-511687718050783."
+        },
+        {
+          "start_page": 16,
+          "end_page": 18,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract Agreement No. GEMC-511687754844117 for the supply of Samsung MLT-D203S Black Toner Cartridges to IOCL Panipat Refinery.",
+          "reasoning": "Contains standard GeM contract details, organization details, item specifications, and terms for contract GEMC-511687754844117."
+        },
+        {
+          "start_page": 19,
+          "end_page": 20,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificates (CRAC) No. GEMCRAC-1-511687754844117-2 and -1 for IOCL Panipat Refinery.",
+          "reasoning": "These pages contain system-generated CRACs confirming receipt and acceptance of goods under contract GEMC-511687754844117."
+        },
+        {
+          "start_page": 21,
+          "end_page": 23,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract Agreement No. GEMC-511687757736947 for the supply of HP 88A Black Original LaserJet Toner Cartridges to Airports Authority of India.",
+          "reasoning": "Contains standard GeM contract details, organization details, item specifications, and terms for contract GEMC-511687757736947."
+        },
+        {
+          "start_page": 24,
+          "end_page": 24,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificate (CRAC) No. GEMCRAC-1-511687757736947-1 for Airports Authority of India.",
+          "reasoning": "This page is a system-generated CRAC confirming receipt and acceptance of goods under contract GEMC-511687757736947."
+        },
+        {
+          "start_page": 25,
+          "end_page": 30,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract Agreement No. GEMC-511687794687805 for the supply of HP Ink Bottles and Toner Cartridges to SPIC Chandigarh.",
+          "reasoning": "Contains standard GeM contract details, organization details, item specifications, and terms for contract GEMC-511687794687805."
+        },
+        {
+          "start_page": 31,
+          "end_page": 33,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificates (CRAC) No. GEMCRAC-1-511687794687805-1 and -2 for SPIC Chandigarh.",
+          "reasoning": "These pages contain system-generated CRACs confirming receipt and acceptance of goods under contract GEMC-511687794687805."
+        },
+        {
+          "start_page": 34,
+          "end_page": 36,
+          "document_type": "PURCHASE_ORDER",
+          "confidence": 0.99,
+          "summary": "GeM Contract Agreement No. GEMC-511687722195741 for the supply of Samsung MLT-D203S Black Toner Cartridges to IOCL Panipat Refinery.",
+          "reasoning": "Contains standard GeM contract details, organization details, item specifications, and terms for contract GEMC-511687722195741."
+        },
+        {
+          "start_page": 37,
+          "end_page": 38,
+          "document_type": "EXECUTION_PROOF",
+          "confidence": 0.2,
+          "summary": "Consignee Receipt & Acceptance Certificates (CRAC) No. GEMCRAC-1-511687722195741-2 and -1 for IOCL Panipat Refinery.",
+          "reasoning": "These pages contain system-generated CRACs confirming receipt and acceptance of goods under contract GEMC-511687722195741."
+        }
+      ]
+    },
+    "17613957888959.pdf": {
+      "document_type": "BOQ_COMPLIANCE",
+      "confidence": 0.2,
+      "reasoning": "Segmented into 1 logical document(s) via Gemini (gemini-flash-latest).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 2,
+          "document_type": "BOQ_COMPLIANCE",
+          "confidence": 0.2,
+          "summary": "Technical specifications and scope of work compliance for HP 77A A4 Mono MFP cartridges.",
+          "reasoning": "Page 1 outlines the scope of work for the cartridge supply tender, and Page 2 contains the technical specification compliance table for the cartridges, which the bidder must fill out to confirm compliance."
+        }
+      ]
+    },
+    "17613955366771.pdf": {
+      "document_type": "MAF_OEM_AUTH",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Ollama (llama3:8b).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 1,
+          "document_type": "MAF_OEM_AUTH",
+          "confidence": 0.99,
+          "summary": "Authorization letter from Manufacturer of Equipment, HP India Sales Private Limited.",
+          "reasoning": "Contains the manufacturer's authorization and warranty information."
+        }
+      ]
+    },
+    "17613955769352.pdf": {
+      "document_type": "GST_CERTIFICATE",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Ollama (llama3:8b).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 3,
+          "document_type": "GST_CERTIFICATE",
+          "confidence": 0.99,
+          "summary": "Udyam Registration Certificate for LUXMI ENTERPRISES.",
+          "reasoning": "Contains GST registration details, including legal name, trade name, and jurisdictional office."
+        }
+      ]
+    },
+    "17613958025913.pdf": {
+      "document_type": "UDYAM_MSME",
+      "confidence": 0.99,
+      "reasoning": "Segmented into 1 logical document(s) via Ollama (llama3:8b).",
+      "source": "liquid_decision_model",
+      "is_segmented": false,
+      "segments": [
+        {
+          "start_page": 1,
+          "end_page": 2,
+          "document_type": "UDYAM_MSME",
+          "confidence": 0.99,
+          "summary": "Udyam Registration Certificate for M/S Luxmi Enterprises.",
+          "reasoning": "Contains Udyam registration details, enterprise information, and disclaimer."
+        }
+      ]
+    }
+  }
+}

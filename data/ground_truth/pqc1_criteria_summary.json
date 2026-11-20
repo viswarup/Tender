@@ -1,0 +1,46 @@
+{
+  "source_pdf": "Bid documents/ARC Cartidges_PQC1/PQC1.pdf",
+  "tender_no": "9400M25A37",
+  "subject": "Three-year rate contract of A3 mono MFP cartridges, A4 mono MFP cartridges, and A3 colour MFP cartridges",
+  "financial_pqc": "Not Applicable",
+  "commercial_experience": {
+    "similar_item": "Supply of toners or cartridges",
+    "experience_window_rule": "Last 5 years ending on the last day of the month immediately preceding the month in which the last date of bid submission falls",
+    "options": [
+      {
+        "label": "Option A",
+        "requirement": "Three executed orders",
+        "min_value_per_order_inr": 182000
+      },
+      {
+        "label": "Option B",
+        "requirement": "Two executed orders",
+        "min_value_per_order_inr": 243000
+      },
+      {
+        "label": "Option C",
+        "requirement": "One executed order",
+        "min_value_per_order_inr": 303000
+      }
+    ],
+    "valid_execution_proofs": [
+      "Purchase Order with invoices and self-certification",
+      "Purchase Order with bank certificate indicating payment",
+      "Purchase Order with client execution certificate indicating executed value",
+      "IOCL internal records for IOCL jobs",
+      "Multiple orders against a single rate contract if cumulative value satisfies PQC"
+    ]
+  },
+  "heamons_ground_truth": {
+    "vendor": "HEAMONS SYSTEMS",
+    "status": "ACCEPTED",
+    "basis": "Acceptable against single order value criteria based on PO GEMC-511687703758674 from Northern Railway",
+    "qualifying_po": {
+      "po_number": "GEMC-511687703758674",
+      "doc_date": "01.03.2024",
+      "po_value_inr": 814515,
+      "similar_item": true,
+      "execution_proof": "CRAC submitted"
+    }
+  }
+}

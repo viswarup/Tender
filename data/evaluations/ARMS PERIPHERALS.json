@@ -1,0 +1,30 @@
+{
+  "vendor_name": "ARMS PERIPHERALS",
+  "schema_version": "1.0",
+  "financial_pqc": "Not Applicable",
+  "po_evaluations": [
+    {
+      "po_number": "GEMC-511687712377171",
+      "issuing_org": "Unknown",
+      "po_date": "Unknown",
+      "po_value": 0.0,
+      "meets_similar_item": false,
+      "similar_item_reasoning": "",
+      "similar_item_match_type": "NO",
+      "meets_value_threshold": false,
+      "threshold_used": "",
+      "execution_proof_available": true,
+      "execution_proof_type": "17613944812136.pdf",
+      "date_within_window": false,
+      "is_qualifying": false,
+      "disqualification_reason": "Does not meet similar item criteria: ; PO value ₹0 below minimum thresholds; Date issue: Could not parse date 'Unknown'"
+    }
+  ],
+  "qualifying_orders": [],
+  "criteria_met": "Startup Exemption (DPIIT Recognition)",
+  "status": "ACCEPTED",
+  "recommendation": "ARMS PERIPHERALS is exempted from commercial experience criteria as a Startup Exemption (DPIIT Recognition).",
+  "queries": [],
+  "detailed_reasoning": "PQC Evaluation for ARMS PERIPHERALS\nFinancial PQC: Not Applicable\nMSE Exemption: No\nStartup Exemption: Yes\nPurchase Orders submitted: 1\nQualifying orders: 0\nStatus: ACCEPTED\nCriteria met: Startup Exemption (DPIIT Recognition)\n\n  PO: GEMC-511687712377171\n    Org: Unknown\n    Date: Unknown\n    Value: ₹0\n    Similar Item: ✗ (Type: NO) — \n    Value Threshold: ✗ — Below all thresholds\n    Date in Window: ✗\n    Execution Proof: ✓\n    Qualifying: ✗\n    Reason: Does not meet similar item criteria: ; PO value ₹0 below minimum thresholds; Date issue: Could not parse date 'Unknown'\n",
+  "mse_exemption_applicable": true
+}

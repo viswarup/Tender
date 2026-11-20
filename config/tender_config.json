@@ -1,0 +1,51 @@
+{
+  "tender_no": "9400M25A37",
+  "bid_no": "GEM/2025/B/6755890",
+  "bid_end_date": "2025-10-27",
+  "bid_open_date": "2025-10-27",
+  "organization": "Indian Oil Corporation Limited",
+  "department": "Research & Development Centre (Materials Department)",
+  "subject": "Three-year rate contract of 8 nos. of A3 mono MFP cartridges, 94 nos. of A4 mono MFP cartridges, and 21 sets of A3 Colour MFP cartridges",
+  "similar_item_definition": "Supply of toners or cartridges",
+  "similar_item_keywords": ["toner", "cartridge", "toners", "cartridges", "ink cartridge", "laser cartridge", "printer consumable"],
+  "experience_window_years": 5,
+  "financial_pqc": "Not Applicable",
+  "criteria_options": [
+    {"label": "Option A", "description": "Three orders each executed", "min_orders": 3, "min_value_per_order": 182000},
+    {"label": "Option B", "description": "Two orders each executed", "min_orders": 2, "min_value_per_order": 243000},
+    {"label": "Option C", "description": "One order executed", "min_orders": 1, "min_value_per_order": 303000}
+  ],
+  "valid_execution_proof_types": [
+    "PO + Invoice(s) with self-certification",
+    "PO + Bank Certificate indicating payment",
+    "PO + Execution certificate by client with executed value",
+    "IOCL internal records (for jobs executed for IOCL)",
+    "Multiple orders against single rate contract (cumulative value)"
+  ],
+  "mse_exemption": true,
+  "startup_exemption": true,
+  "schedules": [
+    {"schedule": 1, "item": "HP 77A Black LaserJet Toner Cartridge CF277A for Printer HP LaserJet Pro MFP M429 Series", "quantity": 94},
+    {"schedule": 2, "item": "Kyocera Toner 7120 Black", "quantity": 8},
+    {"schedule": 3, "item": "Kyocera TK5275K Cartridge", "quantity": 21},
+    {"schedule": 4, "item": "Kyocera TK5275C Cartridge", "quantity": 21},
+    {"schedule": 5, "item": "Kyocera TK5275Y Cartridge", "quantity": 21},
+    {"schedule": 6, "item": "Kyocera TK5275M Cartridge", "quantity": 21}
+  ],
+  "bids_folder": "raw_bids/ARC Cartridges_Bids",
+  "target_bidders": [
+    "RAVECHI CARTRIDGE",
+    "ALANKAR DISTRIBUTORS",
+    "ARMS PERIPHERALS",
+    "HEAMONS SYSTEMS",
+    "LUXMI ENTERPRISES"
+  ],
+  "models": {
+    "ocr_vision": "qwen2.5vl:3b",
+    "classifier": "gpt-oss:20b",
+    "extractor": "gpt-oss:20b",
+    "evaluator": "gpt-oss:20b",
+    "embeddings": "nomic-embed-text:latest",
+    "chatbot": "gpt-oss:20b"
+  }
+}

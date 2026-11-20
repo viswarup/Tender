@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Traceability & Review UI</title>
+    <meta name="description" content="Audit interface for pipeline steps, OCR verification, and data extraction validation with feedback loop.">
+    <link href="fonts.css" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f8fafc;
+            --bg-panel: #f1f5f9;
+            --surface-sunken: #eef2f7;
+            --border: rgba(15, 23, 42, 0.10);
+            --border-hover: rgba(15, 23, 42, 0.22);
+            --text: #0f172a;
+            --text-dim: #475569;
+            --text-muted: #64748b;
+            --on-accent: #ffffff;
+            --accent: hsl(220, 90%, 56%);
+            --accent-strong: hsl(220, 90%, 46%);
+            --accent-glow: rgba(37, 99, 235, 0.10);
+            --green: hsl(142, 72%, 29%);
+            --green-glow: rgba(22, 163, 74, 0.10);
+            --amber: hsl(38, 92%, 40%);
+            --amber-glow: rgba(217, 119, 6, 0.10);
+            --red: hsl(0, 72%, 50%);
+            --red-glow: rgba(220, 38, 38, 0.10);
+
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Top Header ── */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-section span.badge {
+            background: var(--accent);
+            color: var(--on-accent);
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .logo-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        select {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.5rem 2rem 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            cursor: pointer;
+            outline: none;
+            transition: var(--transition);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+        }
+
+        select:hover, select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        /* ── Tabs Navigation ── */
+        .tabs-nav {
+            display: flex;
+            background: rgba(255, 255, 255, 0.70);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            gap: 0.5rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--text);
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ── Main Container ── */
+        main {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tab-content {
+            display: none;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .tab-content.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Common Card UI ── */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* ── Step 1: Classification Table ── */
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        table.data-table th, table.data-table td {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        table.data-table th {
+            background: var(--bg-panel);
+            color: var(--text-dim);
+            font-weight: 600;
+            font-family: var(--font-display);
+        }
+
+        table.data-table tr:hover td {
+            background: rgba(15,23,42,0.03);
+        }
+
+        .badge-status {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-status.accepted { background: var(--green-glow); color: var(--green); }
+        .badge-status.rejected { background: var(--red-glow); color: var(--red); }
+        .badge-status.queried { background: var(--amber-glow); color: var(--amber); }
+
+        /* ── Split Layouts (Step 2 and Step 3) ── */
+        .split-layout {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .sidebar-panel {
+            width: 45%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 2rem;
+            border-right: 1px solid var(--border);
+        }
+
+        .viewer-panel {
+            width: 55%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: var(--surface-sunken);
+            position: relative;
+        }
+
+        .viewer-controls {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-panel);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .viewer-viewport {
+            flex: 1;
+            overflow: auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* ── Image & Bbox Rendering ── */
+        .image-wrapper {
+            position: relative;
+            box-shadow: 0 8px 24px rgba(15,23,42,0.10);
+            border: 1px solid var(--border);
+            background: #ffffff;
+        }
+
+        .image-wrapper img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .bbox-highlight {
+            position: absolute;
+            border: 2px solid var(--accent);
+            background: rgba(37, 99, 235, 0.18);
+            box-shadow: 0 0 12px var(--accent);
+            border-radius: 4px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        /* ── Extraction Data Item Cards ── */
+        .extraction-group {
+            margin-bottom: 2rem;
+        }
+
+        .group-heading {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .entity-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .entity-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .entity-field {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(15,23,42,0.09);
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .entity-field:last-child {
+            border-bottom: none;
+        }
+
+        .entity-field:hover {
+            background: rgba(15,23,42,0.03);
+            padding-left: 0.25rem;
+        }
+
+        .field-label {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        .field-value-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: right;
+            max-width: 70%;
+        }
+
+        .field-value {
+            font-weight: 600;
+            color: var(--text);
+            word-break: break-word;
+        }
+
+        .badge-source {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid rgba(37, 99, 235, 0.30);
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .flag-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.88rem;
+            padding: 0.2rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .flag-btn:hover {
+            color: var(--red);
+            background: var(--red-glow);
+        }
+
+        /* ── Step 2 Text Panel ── */
+        .text-display {
+            background: var(--surface-sunken);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            max-height: calc(100vh - 280px);
+            color: var(--text-dim);
+        }
+
+        .file-select-panel {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .file-select-panel select {
+            flex: 1;
+        }
+
+        .page-navigator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .page-navigator button {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .page-navigator button:hover {
+            background: var(--accent);
+            color: var(--on-accent);
+            border-color: var(--accent);
+        }
+
+        /* ── Feedback Modal ── */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            width: 480px;
+            max-width: 90%;
+            box-shadow: 0 20px 50px rgba(15,23,42,0.18);
+            overflow: hidden;
+            animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .modal-close:hover {
+            color: var(--text);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dim);
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.65rem 0.88rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .radio-label input[type="radio"] {
+            width: auto;
+            cursor: pointer;
+        }
+
+        .modal-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            background: var(--bg-panel);
+        }
+
+        .btn {
+            padding: 0.6rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-secondary {
+            background: none;
+            border-color: var(--border);
+            color: var(--text-dim);
+        }
+
+        .btn-secondary:hover {
+            color: var(--text);
+            background: rgba(15,23,42,0.04);
+            border-color: var(--border-hover);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--on-accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-strong);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.30);
+        }
+
+        /* ── Steps 4 and 5 details ── */
+        .mapping-card {
+            border-left: 4px solid var(--accent);
+        }
+        .mapping-card.unsubmitted {
+            border-left-color: var(--red);
+        }
+
+        .eval-status-banner {
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .eval-status-banner.accepted { background: var(--green-glow); border: 1px solid rgba(22, 163, 74, 0.35); }
+        .eval-status-banner.rejected { background: var(--red-glow); border: 1px solid rgba(220, 38, 38, 0.35); }
+        .eval-status-banner.queried { background: var(--amber-glow); border: 1px solid rgba(217, 119, 6, 0.35); }
+
+        .eval-status-text h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .eval-status-text p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .detail-row {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        .detail-val {
+            font-weight: 600;
+        }
+
+        .raw-text-preview {
+            background: var(--surface-sunken);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            font-family: var(--font-mono);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header -->
+    <header>
+        <div class="logo-section">
+            <span class="badge">TE</span>
+            <div class="logo-title">Pipeline Audit & Traceability</div>
+        </div>
+        <div class="controls">
+            <div class="control-group">
+                <label for="vendor-select">Select Bidder:</label>
+                <select id="vendor-select">
+                    <option value="" disabled selected>Loading vendors...</option>
+                </select>
+            </div>
+            <div id="eval-status-badge"></div>
+        </div>
+    </header>
+
+    <!-- Tabs Bar -->
+    <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="tab-classification">📂 Step 1: Classification & Segments</button>
+        <button class="tab-btn" data-tab="tab-ocr">📝 Step 2: OCR & Page Viewer</button>
+        <button class="tab-btn" data-tab="tab-extraction">🔍 Step 3: Extraction & Traceability</button>
+        <button class="tab-btn" data-tab="tab-mapping">🔗 Step 4: PO Mapping</button>
+        <button class="tab-btn" data-tab="tab-evaluation">🏆 Step 5: PQC Evaluation</button>
+    </div>
+
+    <!-- Main Container -->
+    <main>
+
+        <!-- Tab 1: Classification & Segments -->
+        <div class="tab-content active" id="tab-classification">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Document Registry Classification Report</div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="data-table" id="classification-table">
+                        <thead>
+                            <tr>
+                                <th>Filename</th>
+                                <th>Overall Document Type</th>
+                                <th>Confidence</th>
+                                <th>Segments Splits</th>
+                                <th>Classifier Reasoning</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="classification-tbody">
+                            <tr>
+                                <td colspan="6" style="text-align: center; color: var(--text-dim);">Select a vendor to inspect classification registry.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: OCR & Page Viewer (Split Layout) -->
+        <div class="tab-content" id="tab-ocr" style="padding: 0; height: 100%; overflow: hidden;">
+            <div class="split-layout">
+                <div class="sidebar-panel">
+                    <div class="file-select-panel">
+                        <select id="ocr-file-select">
+                            <option value="" disabled selected>Select Document</option>
+                        </select>
+                    </div>
+                    <div class="file-select-panel" style="justify-content: space-between; align-items: center;">
+                        <span id="ocr-page-indicator" style="font-size: 0.88rem; font-weight: 600;">Page 1 / 1</span>
+                        <div class="page-navigator">
+                            <button id="ocr-prev-btn">&larr;</button>
+                            <button id="ocr-next-btn">&rarr;</button>
+                        </div>
+                    </div>
+                    <div id="ocr-model-container" style="margin-bottom: 1rem; display: none; align-items: center; gap: 0.5rem; background: var(--bg-card); padding: 0.5rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+                        <span style="font-size: 0.82rem; color: var(--text-dim); font-weight: 500;">OCR Method:</span>
+                        <span class="badge-source" id="ocr-model-badge" style="font-size: 0.82rem; font-weight: 600;"></span>
+                    </div>
+                    <div class="text-display" id="ocr-text-display">Select a document from the dropdown above to view OCR text.</div>
+                </div>
+                <div class="viewer-panel">
+                    <div class="viewer-controls">
+                        <span style="font-family: var(--font-display); font-weight: 600; font-size: 0.9rem;" id="ocr-viewer-title">No Document Loaded</span>
+                    </div>
+                    <div class="viewer-viewport" id="ocr-viewer-viewport">
+                        <div style="color: var(--text-dim);">Rendered PDF page image will load here.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Data Extraction & Bbox Traceability (Split Layout) -->
+        <div class="tab-content" id="tab-extraction" style="padding: 0; height: 100%; overflow: hidden;">
+            <div class="split-layout">
+                <div class="sidebar-panel" id="extraction-sidebar">
+                    <div style="color: var(--text-dim);">Select a vendor to display extracted data cards.</div>
+                </div>
+                <div class="viewer-panel">
+                    <div class="viewer-controls">
+                        <span style="font-family: var(--font-display); font-weight: 600; font-size: 0.9rem;" id="extraction-viewer-title">No Source Page Loaded</span>
+                        <div class="page-navigator" style="gap: 1rem; align-items: center;">
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);" id="bbox-coords-indicator"></span>
+                        </div>
+                    </div>
+                    <div class="viewer-viewport" id="extraction-viewer-viewport">
+                        <div style="color: var(--text-dim);">Click on any extraction value to load its source page and highlight coordinates.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: PO Mapping -->
+        <div class="tab-content" id="tab-mapping">
+            <div id="mapping-container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Execution Proof Mapping</div>
+                    </div>
+                    <p style="color: var(--text-dim);">Select a vendor to audit the purchase order to invoice matching.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 5: PQC Evaluation -->
+        <div class="tab-content" id="tab-evaluation">
+            <div id="evaluation-container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Evaluation Decision</div>
+                    </div>
+                    <p style="color: var(--text-dim);">Select a vendor to audit PQC evaluation rules.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Feedback Modal -->
+    <div class="modal-overlay" id="feedback-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Flag / Annotate Field</div>
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="feedback-form">
+                    <input type="hidden" id="feedback-vendor">
+                    <input type="hidden" id="feedback-document">
+                    <input type="hidden" id="feedback-field-path">
+                    
+                    <div class="form-group">
+                        <label>Field Identifier:</label>
+                        <input type="text" id="feedback-field-display" disabled style="background: rgba(15,23,42,0.04); font-family: var(--font-mono); font-size: 0.8rem;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Original Extracted Value:</label>
+                        <input type="text" id="feedback-original-display" disabled style="background: rgba(15,23,42,0.04); font-weight: 600;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Audit Status:</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="feedback-status" value="INCORRECT" checked>
+                                <span style="color: var(--red); font-weight: 600;">Incorrect / Error</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="feedback-status" value="CORRECT">
+                                <span style="color: var(--green); font-weight: 600;">Correct / Flagged Context</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback-corrected">Corrected Value (Optional):</label>
+                        <input type="text" id="feedback-corrected" placeholder="Provide corrected value if known">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback-comment">Observations & Comments:</label>
+                        <textarea id="feedback-comment" rows="4" placeholder="Detail why this extraction is wrong, or leave notes on VLM performance..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="modal-cancel-btn">Cancel</button>
+                <button class="btn btn-primary" id="modal-submit-btn">Save Annotation</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Logic -->
+    <script>
+        // HTML escaping helper to protect against XSS (S4)
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Authenticated fetch wrapper to inject X-API-Key header (S1)
+        async function authenticatedFetch(url, options = {}) {
+            const apiKey = document.querySelector('meta[name="api-key"]')?.getAttribute('content');
+            if (apiKey) {
+                if (!options.headers) {
+                    options.headers = {};
+                }
+                options.headers['X-API-Key'] = apiKey;
+            }
+            return fetch(url, options);
+        }
+
+        // Data States
+        let vendors = [];
+        let selectedVendorName = "";
+        let vendorData = null;
+        let evaluationData = null;
+        let classifiedDocs = {};
+
+        // OCR tab sub-states
+        let ocrCurrentDoc = null;
+        let ocrCurrentPageNum = 1;
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            setupTabs();
+            setupModal();
+            await loadBidders();
+        });
+
+        // ── Tab Management ──
+        function setupTabs() {
+            const tabButtons = document.querySelectorAll(".tab-btn");
+            const tabContents = document.querySelectorAll(".tab-content");
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const targetTab = btn.getAttribute("data-tab");
+                    tabButtons.forEach(b => b.classList.remove("active"));
+                    tabContents.forEach(c => c.classList.remove("active"));
+                    btn.classList.add("active");
+                    document.getElementById(targetTab).classList.add("active");
+                    
+                    // Trigger container adjustments/scrolling if relevant
+                    if (targetTab === 'tab-ocr' && ocrCurrentDoc) {
+                        renderOcrPage();
+                    }
+                });
+            });
+        }
+
+        // ── Load Bidders from API ──
+        async function loadBidders() {
+            const selectEl = document.getElementById("vendor-select");
+            try {
+                // Fetch classification registry
+                const classRes = await authenticatedFetch('/api/summary'); // Check for classified summary
+                const sumData = await classRes.json();
+                
+                // Fetch vendor list
+                const vendorsRes = await authenticatedFetch('/api/vendors');
+                vendors = await vendorsRes.json();
+                
+                selectEl.innerHTML = '<option value="" disabled selected>Choose Vendor</option>';
+                vendors.forEach(v => {
+                    const opt = document.createElement("option");
+                    opt.value = v.name;
+                    opt.textContent = `${v.name} (${v.status})`;
+                    selectEl.appendChild(opt);
+                });
+
+                selectEl.onchange = async (e) => {
+                    selectedVendorName = e.target.value;
+                    await loadVendorDetails(selectedVendorName);
+                };
+            } catch (err) {
+                console.error("Error loading vendors:", err);
+                selectEl.innerHTML = '<option value="" disabled>Error Loading Vendors</option>';
+            }
+        }
+
+        // ── Load Detailed Vendor Extraction & Evaluation Data ──
+        async function loadVendorDetails(vendorName) {
+            try {
+                // Get extractor JSON
+                const vendorRes = await authenticatedFetch(`/api/vendor/${encodeURIComponent(vendorName)}`);
+                vendorData = await vendorRes.json();
+
+                // Get evaluator JSON
+                const evalRes = await authenticatedFetch(`/api/evaluation/${encodeURIComponent(vendorName)}`);
+                evaluationData = await evalRes.json();
+
+                // Update Status Badge
+                updateStatusBadge(evaluationData.status);
+
+                // Render Tab 1 (Classification)
+                renderClassificationTable();
+
+                // Render Tab 2 (OCR select dropdown)
+                populateOcrDropdown();
+
+                // Render Tab 3 (Extraction Split View)
+                renderExtractionCards();
+
+                // Render Tab 4 (Mapping)
+                renderMappingAudit();
+
+                // Render Tab 5 (PQC Evaluation Decision)
+                renderEvaluationAudit();
+            } catch (err) {
+                console.error("Error fetching vendor data:", err);
+            }
+        }
+
+        function updateStatusBadge(status) {
+            const badge = document.getElementById("eval-status-badge");
+            badge.className = ""; // clear
+            let badgeClass = "badge-status ";
+            if (status === 'ACCEPTED') badgeClass += "accepted";
+            else if (status === 'REJECTED') badgeClass += "rejected";
+            else badgeClass += "queried";
+            badge.innerHTML = `<span class="${badgeClass}">${status}</span>`;
+        }
+
+        // Helper to view a document in OCR Viewer tab
+        function viewDocumentInViewer(filename) {
+            // Switch to Step 2 tab
+            const tab2Btn = document.querySelector('[data-tab="tab-ocr"]');
+            if (tab2Btn) {
+                tab2Btn.click();
+            }
+            
+            // Set select option
+            const selectEl = document.getElementById("ocr-file-select");
+            if (selectEl) {
+                selectEl.value = filename;
+            }
+            
+            // Load and render
+            ocrCurrentDoc = vendorData.documents.find(d => d.filename === filename);
+            ocrCurrentPageNum = 1;
+            renderOcrPage();
+        }
+
+        // ── Step 1: Render Classification & Segmentation Table ──
+        function renderClassificationTable() {
+            const tbody = document.getElementById("classification-tbody");
+            if (!vendorData || !vendorData.documents) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align: center;">No documents found.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = "";
+            vendorData.documents.forEach(doc => {
+                const tr = document.createElement("tr");
+
+                // Segments split format
+                let segmentsDesc = "No internal segments";
+                if (doc.segments && doc.segments.length > 0) {
+                    segmentsDesc = doc.segments.map(seg => {
+                        return `<div style="margin-bottom: 0.25rem;">
+                            <strong>Pages ${seg.start_page}-${seg.end_page}:</strong> 
+                            <span class="badge-source" style="font-size: 0.65rem;">${escapeHtml(seg.document_type)}</span> (Conf: ${Math.round(seg.confidence * 100)}%)
+                        </div>`;
+                    }).join("");
+                }
+
+                tr.innerHTML = `
+                    <td><strong>${escapeHtml(doc.filename)}</strong><br><span style="font-size: 0.72rem; color: var(--text-muted);">${(doc.file_size_bytes / 1024).toFixed(1)} KB</span></td>
+                    <td><span class="badge-source" style="font-size: 0.78rem; font-family: var(--font-mono);">${escapeHtml(doc.document_type)}</span></td>
+                    <td><strong>${Math.round(doc.classification_confidence * 100)}%</strong></td>
+                    <td style="max-width: 300px; font-size: 0.8rem;">${segmentsDesc}</td>
+                    <td style="color: var(--text-dim); max-width: 400px; font-size: 0.82rem;">${escapeHtml(doc.summary || 'None')}</td>
+                    <td>
+                        <button class="btn btn-secondary inspect-doc-btn" style="padding: 0.3rem 0.65rem; font-size: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border);" data-filename="${escapeHtml(doc.filename)}">
+                            👁️ View File
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+
+                const inspectBtn = tr.querySelector(".inspect-doc-btn");
+                if (inspectBtn) {
+                    inspectBtn.addEventListener("click", () => {
+                        viewDocumentInViewer(doc.filename);
+                    });
+                }
+            });
+        }
+
+        // ── Step 2: OCR Dropdown & Page Viewer Logic ──
+        function populateOcrDropdown() {
+            const selectEl = document.getElementById("ocr-file-select");
+            selectEl.innerHTML = '<option value="" disabled selected>Select Document</option>';
+            
+            if (!vendorData || !vendorData.documents) return;
+
+            vendorData.documents.forEach(doc => {
+                const opt = document.createElement("option");
+                opt.value = doc.filename;
+                opt.textContent = `${doc.filename} (${doc.num_pages} pgs)`;
+                selectEl.appendChild(opt);
+            });
+
+            selectEl.onchange = (e) => {
+                const docName = e.target.value;
+                ocrCurrentDoc = vendorData.documents.find(d => d.filename === docName);
+                ocrCurrentPageNum = 1;
+                renderOcrPage();
+            };
+
+            // Navigation buttons
+            document.getElementById("ocr-prev-btn").onclick = () => {
+                if (ocrCurrentPageNum > 1) {
+                    ocrCurrentPageNum--;
+                    renderOcrPage();
+                }
+            };
+            document.getElementById("ocr-next-btn").onclick = () => {
+                if (ocrCurrentDoc && ocrCurrentPageNum < ocrCurrentDoc.num_pages) {
+                    ocrCurrentPageNum++;
+                    renderOcrPage();
+                }
+            };
+        }
+
+        function renderOcrPage() {
+            if (!ocrCurrentDoc) return;
+
+            document.getElementById("ocr-viewer-title").textContent = `${ocrCurrentDoc.filename} (Page ${ocrCurrentPageNum} of ${ocrCurrentDoc.num_pages})`;
+            document.getElementById("ocr-page-indicator").textContent = `Page ${ocrCurrentPageNum} / ${ocrCurrentDoc.num_pages}`;
+
+            const page = ocrCurrentDoc.pages.find(p => p.page_number === ocrCurrentPageNum);
+            const textDisplay = document.getElementById("ocr-text-display");
+            const viewerViewport = document.getElementById("ocr-viewer-viewport");
+
+            if (page) {
+                let pageText = (page.text || page.ocr_text || "").trim();
+                
+                // Parse OCR model info if present
+                const modelMatch = pageText.match(/^\[OCR_MODEL:\s*([^\]]+)\]/);
+                const modelContainer = document.getElementById("ocr-model-container");
+                const modelBadge = document.getElementById("ocr-model-badge");
+                
+                if (modelMatch) {
+                    const modelName = modelMatch[1];
+                    modelBadge.textContent = modelName;
+                    modelContainer.style.display = "flex";
+                    // Remove the [OCR_MODEL: ...] tag from the displayed text for a cleaner look
+                    pageText = pageText.replace(/^\[OCR_MODEL:\s*[^\]]+\]\s*/, "").trim();
+                } else {
+                    modelContainer.style.display = "none";
+                }
+
+                // Show OCR or extractable text
+                textDisplay.textContent = pageText || "[No extractable text found on this page]";
+                
+                // Show Image
+                const pageImageFilename = `${ocrCurrentDoc.filename.replace(/\.[^/.]+$/, "")}_page_${ocrCurrentPageNum}.png`;
+                const apiKey = document.querySelector('meta[name="api-key"]')?.getAttribute('content') || '';
+                const queryParam = apiKey ? `?api_key=${encodeURIComponent(apiKey)}` : '';
+                const imageUrl = `/api/page-image/${encodeURIComponent(selectedVendorName)}/${encodeURIComponent(pageImageFilename)}${queryParam}`;
+                
+                viewerViewport.innerHTML = `
+                    <div class="image-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+                        <img src="${imageUrl}" alt="Page Image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="display: block;">
+                        <div class="image-error-fallback" style="display: none; padding: 4rem 2rem; color: var(--text-dim); text-align: center; font-size: 0.9rem; font-weight: 500; font-family: var(--font-display);">
+                            ⚠️ PDF Page Image Not Rendered or Found
+                        </div>
+                    </div>
+                `;
+            } else {
+                textDisplay.textContent = "Error: Page data not found.";
+                viewerViewport.innerHTML = '<div style="color: var(--text-dim);">Page image not found.</div>';
+            }
+        }
+
+        // ── Step 3: Render Structured Extraction Data Cards with Traceability ──
+        function renderExtractionCards() {
+            const sidebar = document.getElementById("extraction-sidebar");
+            const viewport = document.getElementById("extraction-viewer-viewport");
+            viewport.innerHTML = '<div style="color: var(--text-dim);">Click on any extraction value to load its source page and highlight coordinates.</div>';
+            document.getElementById("extraction-viewer-title").textContent = "No Source Page Loaded";
+            document.getElementById("bbox-coords-indicator").textContent = "";
+
+            if (!vendorData) {
+                sidebar.innerHTML = "No vendor loaded.";
+                return;
+            }
+
+            sidebar.innerHTML = "";
+
+            // Categories
+            const poData = vendorData.purchase_orders || [];
+            const udyamData = vendorData.udyam_registrations || [];
+            const mafData = vendorData.maf_authorizations || [];
+            const gstData = vendorData.gst_certificates || [];
+
+            // 1. Purchase Orders
+            if (poData.length > 0) {
+                const group = document.createElement("div");
+                group.className = "extraction-group";
+                group.innerHTML = `<div class="group-heading">📦 Extracted Purchase Orders (${poData.length})</div>`;
+                
+                poData.forEach((po, idx) => {
+                    const card = document.createElement("div");
+                    card.className = "entity-card";
+                    card.innerHTML = `
+                        <div style="font-weight: 700; font-family: var(--font-display); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
+                            <span>Purchase Order #${idx + 1}</span>
+                            <span class="badge-source" style="background: var(--accent-glow); border-color: transparent;">Status: ${po.execution_proof_status || 'UNKNOWN'}</span>
+                        </div>
+                    `;
+
+                    // Add Fields
+                    card.appendChild(createFieldRow("PO Number", po.po_number, `purchase_orders[${idx}].po_number`));
+                    card.appendChild(createFieldRow("Issuing Org", po.issuing_organization, `purchase_orders[${idx}].issuing_organization`));
+                    card.appendChild(createFieldRow("PO Date", po.po_date, `purchase_orders[${idx}].po_date`));
+                    card.appendChild(createFieldRow("PO Value (Raw)", po.po_value, `purchase_orders[${idx}].po_value`));
+                    
+                    // Numeric value has no source object (derived)
+                    const numValDiv = document.createElement("div");
+                    numValDiv.className = "entity-field";
+                    numValDiv.innerHTML = `
+                        <span class="field-label">PO Value (Parsed)</span>
+                        <div class="field-value-container">
+                            <span class="field-value" style="font-family: var(--font-mono); color: var(--accent);">₹ ${po.po_value_numeric ? po.po_value_numeric.toLocaleString() : 'N/A'}</span>
+                        </div>
+                    `;
+                    card.appendChild(numValDiv);
+
+                    card.appendChild(createFieldRow("Items Description", po.items_description, `purchase_orders[${idx}].items_description`));
+
+                    group.appendChild(card);
+                });
+                sidebar.appendChild(group);
+            }
+
+            // 2. Udyam MSME
+            if (udyamData.length > 0) {
+                const group = document.createElement("div");
+                group.className = "extraction-group";
+                group.innerHTML = `<div class="group-heading">📄 Udyam Certificate Details</div>`;
+                udyamData.forEach((u, idx) => {
+                    const card = document.createElement("div");
+                    card.className = "entity-card";
+                    card.appendChild(createFieldRow("Udyam Number", u.udyam_number, `udyam_registrations[${idx}].udyam_number`));
+                    card.appendChild(createFieldRow("Enterprise Name", u.enterprise_name, `udyam_registrations[${idx}].enterprise_name`));
+                    card.appendChild(createFieldRow("Enterprise Type", u.enterprise_type, `udyam_registrations[${idx}].enterprise_type`));
+                    group.appendChild(card);
+                });
+                sidebar.appendChild(group);
+            }
+
+            // 3. MAF OEM Auth
+            if (mafData.length > 0) {
+                const group = document.createElement("div");
+                group.className = "extraction-group";
+                group.innerHTML = `<div class="group-heading">🛡️ Manufacturer Authorizations (MAF)</div>`;
+                mafData.forEach((m, idx) => {
+                    const card = document.createElement("div");
+                    card.className = "entity-card";
+                    card.appendChild(createFieldRow("OEM Brand", m.oem_name, `maf_authorizations[${idx}].oem_name`));
+                    card.appendChild(createFieldRow("Authorized Vendor", m.authorized_vendor, `maf_authorizations[${idx}].authorized_vendor`));
+                    card.appendChild(createFieldRow("Product Category", m.product_category, `maf_authorizations[${idx}].product_category`));
+                    card.appendChild(createFieldRow("Validity Period", m.validity_period, `maf_authorizations[${idx}].validity_period`));
+                    group.appendChild(card);
+                });
+                sidebar.appendChild(group);
+            }
+
+            // 4. GST Details
+            if (gstData.length > 0) {
+                const group = document.createElement("div");
+                group.className = "extraction-group";
+                group.innerHTML = `<div class="group-heading">🏢 GSTIN Verification</div>`;
+                gstData.forEach((g, idx) => {
+                    const card = document.createElement("div");
+                    card.className = "entity-card";
+                    card.appendChild(createFieldRow("GSTIN Number", g.gstin, `gst_certificates[${idx}].gstin`));
+                    card.appendChild(createFieldRow("Legal Trade Name", g.legal_name, `gst_certificates[${idx}].legal_name`));
+                    group.appendChild(card);
+                });
+                sidebar.appendChild(group);
+            }
+
+            if (sidebar.children.length === 0) {
+                sidebar.innerHTML = `<div style="text-align: center; color: var(--text-dim); padding: 3rem;">No structured extraction data available for this bidder.</div>`;
+            }
+        }
+
+        // Helper to format rows with clickable source and flag button
+        function createFieldRow(label, extractedValueObj, fieldPath) {
+            const row = document.createElement("div");
+            row.className = "entity-field";
+
+            if (!extractedValueObj) {
+                row.innerHTML = `<span class="field-label">${escapeHtml(label)}</span><span class="field-value" style="color: var(--text-muted);">N/A</span>`;
+                return row;
+            }
+
+            const valueText = extractedValueObj.value || "N/A";
+            const source = extractedValueObj.source;
+            
+            let sourceBadge = "";
+            let clickHandler = () => {};
+
+            if (source) {
+                const filename = source.source_file;
+                const pageNum = source.source_page;
+                const bbox = source.bbox;
+                const confPercent = Math.round(source.confidence * 100);
+
+                sourceBadge = `<span class="badge-source">pg ${pageNum} (${confPercent}%)</span>`;
+
+                clickHandler = () => {
+                    highlightSourceLocation(filename, pageNum, bbox, label, valueText, source.raw_text);
+                };
+            }
+
+            row.innerHTML = `
+                <span class="field-label">${escapeHtml(label)}</span>
+                <div class="field-value-container">
+                    <span class="field-value">${escapeHtml(valueText)}</span>
+                    ${sourceBadge}
+                    <button class="flag-btn" title="Flag/Comment on this field">🚩</button>
+                </div>
+            `;
+
+            // Field click sets highlight
+            row.addEventListener("click", (e) => {
+                if (e.target.classList.contains("flag-btn")) {
+                    e.stopPropagation();
+                    openFeedbackModal(fieldPath, label, valueText, source ? source.source_file : "UNKNOWN");
+                } else {
+                    clickHandler();
+                }
+            });
+
+            return row;
+        }
+
+        // ── Interactive Bounding Box Highlight Logic ──
+        function highlightSourceLocation(filename, pageNum, bbox, label, value, rawContext) {
+            document.getElementById("extraction-viewer-title").textContent = `${filename} (Page ${pageNum}) — Source for "${label}"`;
+
+            const viewport = document.getElementById("extraction-viewer-viewport");
+            const imageFilename = `${filename.replace(/\.[^/.]+$/, "")}_page_${pageNum}.png`;
+            const apiKey = document.querySelector('meta[name="api-key"]')?.getAttribute('content') || '';
+            const queryParam = apiKey ? `?api_key=${encodeURIComponent(apiKey)}` : '';
+            const imageUrl = `/api/page-image/${encodeURIComponent(selectedVendorName)}/${encodeURIComponent(imageFilename)}${queryParam}`;
+
+            // Create image wrapper
+            viewport.innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%;">
+                    <div class="image-wrapper" id="extraction-img-wrapper" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <img src="${imageUrl}" alt="Source Page" id="extraction-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="display: block;">
+                        <div class="image-error-fallback" style="display: none; padding: 4rem 2rem; color: var(--text-dim); text-align: center; font-size: 0.9rem; font-weight: 500; font-family: var(--font-display);">
+                            ⚠️ PDF Page Image Not Rendered or Found
+                        </div>
+                        <div id="bbox-overlay"></div>
+                    </div>
+                    ${rawContext ? `<div style="width: 100%; max-width: 600px; padding: 0 1rem;">
+                        <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; margin-bottom: 0.25rem;">SURROUNDING TEXT CONTEXT:</div>
+                        <div class="raw-text-preview">${escapeHtml(rawContext)}</div>
+                     </div>` : ''}
+                </div>
+            `;
+
+            const overlay = document.getElementById("bbox-overlay");
+            const coordsIndicator = document.getElementById("bbox-coords-indicator");
+
+            if (bbox && bbox.x_min !== undefined) {
+                const x = bbox.x_min;
+                const y = bbox.y_min;
+                const w = bbox.x_max - bbox.x_min;
+                const h = bbox.y_max - bbox.y_min;
+
+                coordsIndicator.textContent = `BBox: [x:${x.toFixed(1)}%, y:${y.toFixed(1)}%, w:${w.toFixed(1)}%, h:${h.toFixed(1)}%]`;
+
+                // Set overlay absolute CSS box
+                overlay.className = "bbox-highlight";
+                overlay.style.left = `${x}%`;
+                overlay.style.top = `${y}%`;
+                overlay.style.width = `${w}%`;
+                overlay.style.height = `${h}%`;
+
+                // Try to scroll the highlighted box into center view of the viewport
+                setTimeout(() => {
+                    const wrapper = document.getElementById("extraction-img-wrapper");
+                    if (wrapper) {
+                        const wrapperHeight = wrapper.offsetHeight;
+                        const scrollY = (y / 100) * wrapperHeight - (viewport.offsetHeight / 2);
+                        viewport.scrollTo({
+                            top: scrollY,
+                            behavior: "smooth"
+                        });
+                    }
+                }, 150);
+            } else {
+                overlay.className = ""; // clear
+                coordsIndicator.textContent = "No coordinates (VLM Cache or standard LLM fallback)";
+            }
+        }
+
+        // ── Step 4: Render PO Linkage to Execution Proofs ──
+        function renderMappingAudit() {
+            const container = document.getElementById("mapping-container");
+            if (!vendorData || !vendorData.purchase_orders) {
+                container.innerHTML = `<div class="card"><p>No purchase orders to audit.</p></div>`;
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Audit: PO-Level Execution Proof Mapping</div>
+                    </div>
+                    <p style="color: var(--text-dim); margin-bottom: 1.5rem;">
+                        Below are all purchase orders extracted for this bidder, and the specific delivery proof files linked directly to them.
+                    </p>
+                    <div id="mapping-list"></div>
+                </div>
+            `;
+
+            const list = document.getElementById("mapping-list");
+            vendorData.purchase_orders.forEach((po, idx) => {
+                const isSubmitted = po.execution_proof_status === "SUBMITTED";
+                const card = document.createElement("div");
+                card.className = `card mapping-card ${isSubmitted ? '' : 'unsubmitted'}`;
+                card.style.background = "var(--bg-panel)";
+                
+                let docsList = "";
+                if (isSubmitted && po.execution_proof_docs && po.execution_proof_docs.length > 0) {
+                    docsList = po.execution_proof_docs.map(doc => {
+                        return `<div style="margin-top: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 1rem;">📄</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent);">${escapeHtml(doc)}</span>
+                        </div>`;
+                    }).join("");
+                } else {
+                    docsList = `<div style="margin-top: 0.5rem; color: var(--red); font-size: 0.88rem;">No matching invoice / execution proof document found in vendor's package.</div>`;
+                }
+
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; border-bottom: 1px dashed var(--border); padding-bottom: 0.5rem;">
+                        <span style="font-weight: 700; font-family: var(--font-display);">PO Number: ${escapeHtml(po.po_number ? po.po_number.value : 'N/A')}</span>
+                        <span class="badge-status ${isSubmitted ? 'accepted' : 'rejected'}">${escapeHtml(po.execution_proof_status)}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">PO Value:</span>
+                        <span class="detail-val">${escapeHtml(po.currency || 'INR')} ${po.po_value_numeric ? po.po_value_numeric.toLocaleString() : 'N/A'}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">PO Date:</span>
+                        <span class="detail-val">${escapeHtml(po.po_date ? po.po_date.value : 'N/A')}</span>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <span class="detail-label" style="font-weight: 600;">Linked Invoices & Execution Proofs:</span>
+                        ${docsList}
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        // ── Step 5: Render PQC Evaluation Audit ──
+        function renderEvaluationAudit() {
+            const container = document.getElementById("evaluation-container");
+            if (!evaluationData) {
+                container.innerHTML = `<div class="card"><p>No evaluation data.</p></div>`;
+                return;
+            }
+
+            const statusClass = evaluationData.status.toLowerCase();
+            const qualifying = evaluationData.qualifying_orders || [];
+
+            container.innerHTML = `
+                <!-- Status Banner -->
+                <div class="eval-status-banner ${statusClass}">
+                    <div class="eval-status-text">
+                        <h2>Bidder Status: ${escapeHtml(evaluationData.status)}</h2>
+                        <p>Criteria Met: <strong>${escapeHtml(evaluationData.criteria_met || 'None')}</strong></p>
+                    </div>
+                    <span class="badge-status ${statusClass}" style="font-size: 1rem; padding: 0.5rem 1rem;">${escapeHtml(evaluationData.status)}</span>
+                </div>
+
+                <!-- Main Evaluation Report -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Evaluator Decision Log</div>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Vendor:</span>
+                        <span class="detail-val" style="color: var(--accent); font-family: var(--font-display); font-size: 1.1rem;">${escapeHtml(evaluationData.vendor_name)}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Financial PQC:</span>
+                        <span class="detail-val">${escapeHtml(evaluationData.financial_pqc)}</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">MSE Exemption Applicable:</span>
+                        <span class="detail-val" style="color: ${evaluationData.mse_exemption_applicable ? 'var(--green)' : 'var(--text-dim)'}">
+                            ${evaluationData.mse_exemption_applicable ? 'YES (Valid Udyam Certificate)' : 'NO'}
+                        </span>
+                    </div>
+                    <div class="detail-row" style="align-items: flex-start;">
+                        <span class="detail-label">Detailed Reasoning:</span>
+                        <div class="detail-val" style="white-space: pre-wrap; font-weight: normal; color: var(--text-dim); line-height: 1.6; font-size: 0.9rem;">${escapeHtml(evaluationData.detailed_reasoning)}</div>
+                    </div>
+                </div>
+
+                <!-- Qualifying Orders Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Qualifying Commercial Orders (${qualifying.length})</div>
+                    </div>
+                    ${qualifying.length > 0 ? `
+                        <div style="overflow-x: auto;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>PO Number</th>
+                                        <th>PO Date</th>
+                                        <th>PO Value (INR)</th>
+                                        <th>Similiar Item Match</th>
+                                        <th>Execution Proof Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${qualifying.map(po => `
+                                        <tr>
+                                            <td style="font-family: var(--font-mono); font-weight: 600;">${escapeHtml(po.po_number)}</td>
+                                            <td>${escapeHtml(po.po_date || 'N/A')}</td>
+                                            <td style="font-weight: 600; color: var(--accent);">₹${po.po_value_numeric ? po.po_value_numeric.toLocaleString() : 'N/A'}</td>
+                                            <td><span class="badge-status accepted">YES</span></td>
+                                            <td><span class="badge-status accepted">${escapeHtml(po.execution_proof_status)}</span></td>
+                                        </tr>
+                                    `).join("")}
+                                </tbody>
+                            </table>
+                        </div>
+                    ` : `<p style="color: var(--text-dim); text-align: center; padding: 2rem;">No qualifying orders listed. (If exempted, commercial orders are not required to be met).</p>`}
+                </div>
+            `;
+        }
+
+        // ── Feedback Modal Dialog Form ──
+        function setupModal() {
+            const overlay = document.getElementById("feedback-modal");
+            const closeBtn = document.getElementById("modal-close-btn");
+            const cancelBtn = document.getElementById("modal-cancel-btn");
+            const submitBtn = document.getElementById("modal-submit-btn");
+
+            const closeModal = () => {
+                overlay.classList.remove("active");
+                document.getElementById("feedback-form").reset();
+            };
+
+            closeBtn.onclick = closeModal;
+            cancelBtn.onclick = closeModal;
+            overlay.onclick = (e) => {
+                if (e.target === overlay) closeModal();
+            };
+
+            submitBtn.onclick = async () => {
+                const vendor = document.getElementById("feedback-vendor").value;
+                const doc = document.getElementById("feedback-document").value;
+                const path = document.getElementById("feedback-field-path").value;
+                const comment = document.getElementById("feedback-comment").value;
+                const corrected = document.getElementById("feedback-corrected").value;
+                const status = document.querySelector('input[name="feedback-status"]:checked').value;
+
+                if (!comment.trim()) {
+                    alert("Please write a comment explaining your observation.");
+                    return;
+                }
+
+                const payload = {
+                    vendor_name: vendor,
+                    document: doc,
+                    field_path: path,
+                    original_value: document.getElementById("feedback-original-display").value,
+                    corrected_value: corrected || null,
+                    status: status,
+                    comment: comment
+                };
+
+                try {
+                    const res = await authenticatedFetch('/api/feedback', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await res.json();
+                    if (result.status === 'success') {
+                        alert("Annotation saved successfully server-side!");
+                        closeModal();
+                    } else {
+                        alert(`Error: ${result.message}`);
+                    }
+                } catch (err) {
+                    console.error(err);
+                    alert("Failed to submit feedback to backend server.");
+                }
+            };
+        }
+
+        function openFeedbackModal(fieldPath, fieldLabel, originalValue, sourceFile) {
+            document.getElementById("feedback-vendor").value = selectedVendorName;
+            document.getElementById("feedback-document").value = sourceFile;
+            document.getElementById("feedback-field-path").value = fieldPath;
+            document.getElementById("feedback-field-display").value = `${fieldPath} (${fieldLabel})`;
+            document.getElementById("feedback-original-display").value = originalValue;
+            
+            document.getElementById("feedback-modal").classList.add("active");
+        }
+    </script>
+</body>
+</html>

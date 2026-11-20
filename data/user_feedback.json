@@ -1,0 +1,12 @@
+[
+  {
+    "vendor_name": "ALANKAR DISTRIBUTORS",
+    "document": "17622431160461.pdf",
+    "field_path": "purchase_orders[0].po_value",
+    "original_value": "INR 5,384,223",
+    "corrected_value": null,
+    "status": "CORRECT",
+    "comment": "correct extraction",
+    "timestamp": "2026-10-09T07:16:36.637384+00:00"
+  }
+]
