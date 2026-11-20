@@ -8,5 +8,15 @@
     "status": "CORRECT",
     "comment": "correct extraction",
     "timestamp": "2026-10-09T07:16:36.637384+00:00"
+  },
+  {
+    "vendor_name": "ARMS PERIPHERALS",
+    "document": "17613944812136.pdf",
+    "field_path": "purchase_orders[0].po_number",
+    "original_value": "GEMC-511687712377171",
+    "corrected_value": null,
+    "status": "CORRECT",
+    "comment": "It was a correct extraction.",
+    "timestamp": "2026-11-18T06:25:57.250649+00:00"
   }
 ]
